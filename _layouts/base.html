@@ -3,14 +3,20 @@
 	<head>
 		<title>{% if page.title %}{{ page.title }}{% else %}Untitled{% endif %}</title>
 		<meta charset='utf-8'>
+		<link rel='stylesheet' type='text/css' href='/assets/css/normalize.css/normalize.min.css'>
+		<link rel='stylesheet/less' type='text/css' href='/assets/less/core.less'>
 		
 		{% for style in page.styles %}
 		<link rel='stylesheet/less' type='text/css' href='{{ style }}'>
 		{% endfor %}
+		
+		<script type='text/javascript' src='/assets/javascript/less.js/dist/less-1.2.1.min.js'></script>
 	</head>
 	
 	<body>
 		{{ content }}
+		
+		<script type='text/javascript' src='/assets/javascript/mootools.min.js'></script>
 		
 		{% for script in page.scripts %}
 		<script type='text/javascript' src='{{ script }}'></script>
