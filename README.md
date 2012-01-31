@@ -1,0 +1,1 @@
+This is my personal site and blog. A place for me to experiment with frontend development and hopefully help people along the way.
