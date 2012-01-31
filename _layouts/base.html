@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{% if page.title %}{{ page.title }}{% elseif %}Untitled{% endif %}</title>
+		<title>{% if page.title %}{{ page.title }}{% else %}Untitled{% endif %}</title>
 		<meta charset='utf-8'>
 		
 		{% for css in page.styles.css %}
