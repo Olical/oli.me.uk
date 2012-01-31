@@ -4,12 +4,8 @@
 		<title>{% if page.title %}{{ page.title }}{% else %}Untitled{% endif %}</title>
 		<meta charset='utf-8'>
 		
-		{% for css in page.styles.css %}
-		<link rel='stylesheet' type='text/css' href='{{ css }}'>
-		{% endfor %}
-		
-		{% for less in page.styles.less %}
-		<link rel='stylesheet/less' type='text/css' href='{{ less }}'>
+		{% for style in page.styles %}
+		<link rel='stylesheet/less' type='text/css' href='{{ style }}'>
 		{% endfor %}
 	</head>
 	
