@@ -2,29 +2,70 @@
 @import 'more/more';
 
 //=== Colors ===//
+// Main background
 @c-body-background: #2B2B2B;
+
+// Seperate sections of content
 @c-section-flat-background: #767676;
 @c-section-flat-shadow: rgba(0, 0, 0, 0.4);
+@c-section-shadow: rgba(0, 0, 0, 0.6);
+
+// Text
+@c-light-text: darken(#FFFFFF, 3%);
+@c-light-text-shadow: lighten(#000000, 5%);
+@c-dark-text: lighten(#000000, 4%);
+@c-dark-text-shadow: darken(#FFFFFF, 5%);
+
 
 //=== Font families ===//
 @f-droid-sans: 'Droid Sans', sans-serif;
 @f-droid-sans-mono: 'Droid Sans Mono', sans-serif;
 
-//=== Everything else ===//
+
+//=== Page ===//
 body {
 	background: @c-body-background url('../images/carbon-fibre-v2.png') repeat left top;
 	font-size: 0.625em; // 10px
 	font-family: @f-droid-sans;
+	color: @c-dark-text;
 }
 
+//=== General text ==//
+p {
+	font-size: 1.65em; // 16px
+	line-height: 1.3125em; // 21px
+	word-spacing: 0.1875em; // 3px
+	width: 61.803%; // Golden ratio, also happens to make the lines the perfect length
+	hyphens: auto;
+}
+
+p + p {
+	text-indent: 1.5625em; // 25px
+}
+
+
+//=== Everything else ===//
 section {
 	background-color: lighten(@c-section-flat-background, 50%);
 	border-radius: 8px;
 	overflow: hidden;
+	box-shadow: 0 1px 8px @c-section-shadow;
+	margin: 18px 0;
+	
+	p {
+		margin: 1em; // 16px
+	}
 	
 	div.flat {
 		background: @c-section-flat-background url('../images/brushed-alu-dark.png') repeat top left;
-		padding: 1px;
+		font-size: 1.1em; // 11px;
+		padding: 8px 1.454em; // 16px
+		
+		p {
+			color: @c-light-text;
+			text-shadow: 0 1px 0 @c-light-text-shadow;
+			margin: 0;
+		}
 	}
 	
 	div.flat.header {
