@@ -7,3 +7,6 @@
 [submodule "assets/css/normalize.css"]
 	path = assets/css/normalize.css
 	url = git://github.com/jonathantneal/normalize.css.git
+[submodule "assets/javascript/prefixfree"]
+	path = assets/javascript/prefixfree
+	url = git://github.com/LeaVerou/prefixfree.git
