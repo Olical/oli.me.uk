@@ -2,20 +2,24 @@
 @import 'more/more';
 
 //=== Colors ===//
-// Main background
+// Block level elements
 @c-body-background: #2B2B2B;
+@c-header-background: #F8F8F8;
+@c-content-background: darken(#FFFFFF, 8%);
 
 // Text
 @c-light-text: darken(#FFFFFF, 5%);
 @c-light-text-shadow: lighten(#000000, 5%);
 @c-dark-text: lighten(#000000, 5%);
 @c-dark-text-shadow: darken(#FFFFFF, 5%);
-
+@c-dark-green: #517C01;
+@c-link: #1781D8;
+@c-link-green: rgba(5, 90, 5, 0.1);
 
 //=== Font families ===//
+@f-arvo: 'Arvo', serif;
 @f-droid-sans: 'Droid Sans', sans-serif;
 @f-droid-sans-mono: 'Droid Sans Mono', sans-serif;
-
 
 //=== Page ===//
 body {
@@ -38,5 +42,84 @@ p + p {
 	text-indent: 1.5625em; // 25px
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: @f-arvo;
+	text-shadow: 0 1px 0 @c-dark-text-shadow;
+	color: darken(@c-dark-green, 4%);
+}
+
+h1 {
+	font-size: 3em;
+	line-height: 0.3em;
+	margin-top: 0.966em; // 29px
+	margin-bottom: 0;
+	color: darken(@c-dark-green, 10%);
+}
+
+h2 {
+	color: darken(@c-dark-green, 5%);
+}
+
+h3 {
+	font-size: 1.8em;
+	margin-top: 1.4em;
+}
+
+h4 {
+	font-size: 1.7em;
+	line-height: 0.9em;
+	margin-bottom: 0;
+	border-top: 0.2em solid @c-dark-green;
+	padding-top: 0.8em;
+	margin-top: 1.2em;
+}
+
+a {
+	color: @c-link;
+	border-radius: 3px;
+	transition: color 400ms ease, background 100ms ease, box-shadow 100ms ease;
+}
+
+a:active {
+	background-color: @c-link-green;
+	box-shadow: 0 0 2px 2px @c-link-green;
+}
+
+a:focus {
+	outline: 0;
+}
+
+a:visited {
+	color: darken(@c-link, 10%);
+}
+
+a:hover {
+	color: darken(@c-link, 20%);
+}
 
 //=== Everything else ===//
+header {
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+	background: @c-header-background url('../images/whitediamond.png') repeat top left;
+	height: 90px;
+	width: 100%;
+	margin-top: 20px;
+	position: relative;
+}
+
+div.content {
+	margin-top: -110px;
+	padding: 3em 1.6em;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+	border-radius: 0 0 5px 5px;
+	margin-bottom: 50px;
+	
+	background: -moz-linear-gradient(left,  rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0.25)), color-stop(100%,rgba(0,0,0,0.25)));
+	background: -webkit-linear-gradient(left,  rgba(255,255,255,0.25) 0%,rgba(0,0,0,0.25) 100%);
+	background: -o-linear-gradient(left,  rgba(255,255,255,0.25) 0%,rgba(0,0,0,0.25) 100%);
+	background: -ms-linear-gradient(left,  rgba(255,255,255,0.25) 0%,rgba(0,0,0,0.25) 100%);
+	background: linear-gradient(left,  rgba(255,255,255,0.25) 0%,rgba(0,0,0,0.25) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40ffffff', endColorstr='#40000000',GradientType=1 );
+	background-color: @c-content-background;
+}
