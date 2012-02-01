@@ -45,34 +45,3 @@ p + p {
 
 
 //=== Everything else ===//
-section {
-	background-color: lighten(@c-section-flat-background, 50%);
-	border-radius: 8px;
-	overflow: hidden;
-	box-shadow: 0 1px 8px @c-section-shadow;
-	margin: 18px 0;
-	
-	p {
-		margin: 1em; // 16px
-	}
-	
-	div.flat {
-		background: @c-section-flat-background url('../images/brushed-alu-dark.png') repeat top left;
-		font-size: 1.1em; // 11px;
-		padding: 8px 1.454em; // 16px
-		
-		p {
-			color: @c-light-text;
-			text-shadow: 0 1px 0 @c-light-text-shadow;
-			margin: 0;
-		}
-	}
-	
-	div.flat.header {
-		box-shadow: inset 0 -5px 20px @c-section-flat-shadow;
-	}
-	
-	div.flat.footer {
-		box-shadow: inset 0 5px 20px @c-section-flat-shadow;
-	}
-}
