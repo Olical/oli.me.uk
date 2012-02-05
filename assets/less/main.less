@@ -14,16 +14,56 @@
 @c-bc: #BCBCBC;
 @c-gamebookers-blue: #3299BB;
 
-// Default colors for image backgrounds
-@c-bg-cross-scratches: #EFEFEF;
+//=== Background images ===//
+@c-bg-cross-scratches: #EFEFEF url('../images/cross-scratches.png');
 
 //=== Page ===//
 body {
-	font-size: 0.625em; // 10px
+	font-size: 10 / 16em;
 	font-family: @f-droid-sans;
-	background: @c-bg-cross-scratches url('../images/cross-scratches.png') repeat left top;
+	color: @c-route-66;
+	background: @c-bg-cross-scratches repeat left top;
 }
 
 //=== Text ==//
+p {
+	font-size: 16 / 10em; 
+	line-height: 1.2em;
+}
 
-//=== Everything else ===//
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.2em;
+	font-family: @f-arvo;
+	text-shadow: 0 1px 0 @c-steady-grey;
+}
+
+div.frontpage p {
+	font-family: @f-arvo;
+}
+
+//=== Frontpage styles ===//
+div.frontpage {
+	margin-top: 50px;
+	
+	div.row {
+		background-color: @c-bc;
+		border-bottom: 1px solid darken(@c-bc, 20%);
+		
+		p {
+			vertical-align: bottom;
+			line-height: 4.1em;
+		}
+		
+		div.alpha {
+			text-align: right;
+		}
+		
+		div.omega {
+			font-size: 2em;
+			
+			h1, h2 {
+				padding-left: 20px;
+			}
+		}
+	}
+}
