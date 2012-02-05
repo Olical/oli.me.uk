@@ -28,7 +28,7 @@ body {
 //=== Text ==//
 p {
 	font-size: 16 / 10em; 
-	line-height: 1.2em;
+	line-height: 1.3em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -79,5 +79,61 @@ div.frontpage {
 	
 	p.note {
 		text-align: center;
+	}
+	
+	div.lang-card {
+		position: relative;
+		width: 180px;
+		height: 130px;
+		margin: 0 auto;
+		
+		h3 {
+			height: 100%;
+			line-height: 130px;
+			vertical-align: middle;
+			text-align: center;
+			background-color: @c-bc;
+			border-radius: 4px;
+			font-size: 1.7em;
+			font-family: @f-droid-sans-mono;
+			display: block;
+			
+			transition: transform, box-shadow;
+			transition: 200ms ease;
+			transition-delay: 400ms;
+		}
+		
+		div {
+			position: absolute;
+			top: 0;
+			left: 5%;
+			z-index: -1;
+			width: 90%;
+			background-color: darken(@c-bc, 3%);
+			border-radius: 0 0 4px 4px;
+			
+			transition: top 400ms ease;
+			transition-delay: 0;
+			
+			p {
+				font-size: 12 / 10em;
+				margin: 0;
+				padding: 6px;
+				padding-top: 14px;
+			}
+		}
+	}
+	
+	div.lang-card:hover {
+		h3 {
+			transform: scale(1.1);
+			box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+			transition-delay: 0;
+		}
+		
+		div {
+			top: 100%;
+			transition-delay: 400ms;
+		}
 	}
 }
