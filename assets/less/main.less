@@ -47,7 +47,8 @@ div.frontpage {
 	
 	div.row {
 		background-color: @c-bc;
-		border-bottom: 1px solid darken(@c-bc, 20%);
+		border: 1px solid darken(@c-bc, 20%);
+		border-top-width: 0;
 		
 		p {
 			vertical-align: bottom;
@@ -65,5 +66,20 @@ div.frontpage {
 				padding-left: 20px;
 			}
 		}
+	}
+	
+	div.top.row {
+		border-top-width: 1px;
+	}
+	
+	img.arrows {
+		opacity: 0.5;
+		display: block;
+		text-align: center;
+		margin: 20px auto;
+	}
+	
+	p.note {
+		text-align: center;
 	}
 }
