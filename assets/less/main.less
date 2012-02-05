@@ -14,6 +14,11 @@
 @c-bc: #BCBCBC;
 @c-gamebookers-blue: #3299BB;
 
+// Custom colors
+@c-soft-red: #FFA4A4;
+@c-soft-green: #A4FFA4;
+@c-soft-blue: #A4A4FF;
+
 //=== Background images ===//
 @c-bg-cross-scratches: #EFEFEF url('../images/cross-scratches.png');
 
@@ -29,6 +34,22 @@ body {
 p {
 	font-size: 16 / 10em; 
 	line-height: 1.3em;
+}
+
+a:link {
+	color: @c-gamebookers-blue;
+}
+
+a:visited {
+	color: darken(@c-gamebookers-blue, 5%);
+}
+
+a:hover {
+	color: lighten(@c-gamebookers-blue, 5%);
+}
+
+a:active {
+	color: lighten(@c-gamebookers-blue, 10%);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -92,7 +113,6 @@ div.frontpage {
 			line-height: 130px;
 			vertical-align: middle;
 			text-align: center;
-			background-color: @c-bc;
 			border-radius: 4px;
 			font-size: 1.7em;
 			font-family: @f-droid-sans-mono;
@@ -109,7 +129,7 @@ div.frontpage {
 			left: 5%;
 			z-index: -1;
 			width: 90%;
-			background-color: darken(@c-bc, 3%);
+			background-color: @c-bc;
 			border-radius: 0 0 4px 4px;
 			
 			transition: top 400ms ease;
@@ -122,6 +142,18 @@ div.frontpage {
 				padding-top: 14px;
 			}
 		}
+	}
+	
+	div.lang-card.red h3 {
+		background-color: @c-soft-red;
+	}
+	
+	div.lang-card.green h3 {
+		background-color: @c-soft-green;
+	}
+	
+	div.lang-card.blue h3 {
+		background-color: @c-soft-blue;
 	}
 	
 	div.lang-card:hover {
