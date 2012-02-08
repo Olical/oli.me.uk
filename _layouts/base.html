@@ -20,6 +20,8 @@
 	<body>
 		{{ content }}
 		
+		<script type='text/javascript' src='/assets/javascript/mootools.js'></script>
+		
 		{% for script in page.scripts %}
 		<script type='text/javascript' src='{{ script }}'></script>
 		{% endfor %}
