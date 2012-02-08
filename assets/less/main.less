@@ -1,18 +1,12 @@
 // Load the more framework
 @import 'more/more';
 
+// Main colors from http://www.colourlovers.com/palette/732973/The_Grant
+
 //=== Font families ===//
 @f-arvo: 'Arvo', serif;
 @f-droid-sans: 'Droid Sans', sans-serif;
 @f-droid-sans-mono: 'Droid Sans Mono', sans-serif;
-
-//=== Colors ===//
-// From http://www.colourlovers.com/palette/614092/This_Charming_Man
-@c-white: #FFFFFF;
-@c-grr-ey: #333333;
-@c-black: #000000;
-@c-all-cs: #CCCCCC;
-@c-handsome-devil: #8C3130;
 
 //=== Page ===//
 body {
@@ -21,5 +15,57 @@ body {
 }
 
 //=== Text ==//
+h1, h2, h3, h4, h5, h6 {
+	font-family: @f-arvo;
+}
 
-//=== Frontpage styles ===//
+h1 {
+	font-size: 21 / 10em;
+}
+
+h2 {
+	font-size: 18 / 10em;
+}
+
+h3 {
+	font-size: 16 / 10em;
+}
+
+h4 {
+	font-size: 14 / 10em;
+}
+
+h5 {
+	font-size: 12 / 10em;
+}
+
+h6 {
+	font-size: 11 / 10em;
+}
+
+//=== General ===//
+header {
+	color: #EEEEEE;
+	
+	background: rgb(102,102,102);
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2NjY2NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMDMwMzAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(102,102,102,1) 0%, rgba(48,48,48,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(102,102,102,1)), color-stop(100%,rgba(48,48,48,1)));
+	background: -webkit-linear-gradient(top,  rgba(102,102,102,1) 0%,rgba(48,48,48,1) 100%);
+	background: -o-linear-gradient(top,  rgba(102,102,102,1) 0%,rgba(48,48,48,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(102,102,102,1) 0%,rgba(48,48,48,1) 100%);
+	background: linear-gradient(top,  rgba(102,102,102,1) 0%,rgba(48,48,48,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#303030',GradientType=0 );
+	
+	div.padding {
+		padding: 10px;
+	}
+	
+	h1 {
+		margin: 0;
+		
+		span {
+			color: #999999;
+		}
+	}
+}

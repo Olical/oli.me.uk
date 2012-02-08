@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{% if page.title %}{{ page.title }} // {% endif %} Frontend web development blog // Oliver Caldwell</title>
+		<title>{% if page.title %}{{ page.title }} // {% endif %} Frontend web development blog // By Oliver Caldwell</title>
 		<meta charset='utf-8'>
 		<!--[if lt IE 9]><script type='text/javascript' src='/assets/javascript/html5.min.js'></script><![endif]-->
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Sans+Mono|Arvo'>
@@ -13,6 +13,12 @@
 	</head>
 	
 	<body>
+		<header>
+			<div class='padding'>
+				<h1>Frontend web development blog <span>// By Oliver Caldwell</span></h1>
+			</div>
+		</header>
+		
 		{{ content }}
 		
 		<script type='text/javascript' src='/assets/javascript/mootools.js'></script>
