@@ -8,11 +8,6 @@
 		<link rel='stylesheet' type='text/css' href='/assets/css/normalize.css/normalize.min.css'>
 		<link rel='stylesheet' type='text/css' href='/assets/css/pygments/native.css'>
 		<link rel='stylesheet/less' type='text/css' href='/assets/less/main.less'>
-		
-		{% for style in page.styles %}
-		<link rel='stylesheet/less' type='text/css' href='{{ style }}'>
-		{% endfor %}
-		
 		<script type='text/javascript' src='/assets/javascript/less.js/dist/less-1.2.1.min.js'></script>
 		<script type='text/javascript' src='/assets/javascript/prefixfree/prefixfree.min.js'></script>
 	</head>
@@ -21,9 +16,5 @@
 		{{ content }}
 		
 		<script type='text/javascript' src='/assets/javascript/mootools.js'></script>
-		
-		{% for script in page.scripts %}
-		<script type='text/javascript' src='{{ script }}'></script>
-		{% endfor %}
 	</body>
 </html>
