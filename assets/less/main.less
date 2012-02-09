@@ -34,6 +34,18 @@ a {
 	text-decoration: none;
 }
 
+q:before {
+	content: open-quote;
+}
+
+q:after {
+	content: close-quote;
+}
+
+q {
+	quotes: "“" "”" "‘" "’";
+}
+
 p {
 	font-size: 16 / 10em;
 	color: darken(#36393B, 10%);
@@ -106,7 +118,7 @@ div.container {
 	margin-bottom: 45px;
 }
 
-header {
+div.header {
 	color: lighten(#36393B, 50%);
 	height: 35 / 10em;
 	overflow: hidden;
