@@ -160,4 +160,29 @@ header {
 			opacity: 1;
 		}
 	}
+	
+	form.g-search {
+		display: inline-block;
+		vertical-align: top;
+		
+		input[type='text'] {
+			border: 0;
+			padding: 0 10px 0 25px;
+			width: 0;
+			margin: 5px 16px 5px 10px;
+			background: lighten(#36393B, 20%) url('/assets/images/search.png') no-repeat center;
+			height: 25px;
+			color: lighten(#36393B, 60%);
+			font-size: 16 / 10em;
+			border-radius: 4px;
+			transition: width, background-position, background-color;
+			transition: 400ms ease;
+		}
+		
+		input[type='text']:focus {
+			width: 100px;
+			background-color: lighten(#36393B, 30%);
+			background-position: 5px center;
+		}
+	}
 }
