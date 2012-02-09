@@ -18,6 +18,15 @@ body {
 //=== Text ==//
 h1, h2, h3, h4, h5, h6 {
 	font-family: @f-arvo;
+	margin-bottom: 0.3em;
+	padding-bottom: 0.3em;
+	color: darken(#36393B, 12%);
+	text-shadow: 0 1px 0 #FFFFFF;
+	border-bottom: 1px solid lighten(#45484B, 10%);
+}
+
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+	margin-top: 0;
 }
 
 a {
@@ -56,7 +65,7 @@ p + p {
 }
 
 h1 {
-	font-size: 21 / 10em;
+	font-size: 24 / 10em;
 }
 
 h2 {
@@ -65,8 +74,6 @@ h2 {
 
 h3 {
 	font-size: 18 / 10em;
-	border-bottom: 1px solid lighten(#45484B, 10%);
-	padding-bottom: 0.5em;
 }
 
 h4 {
@@ -79,16 +86,6 @@ h5 {
 
 h6 {
 	font-size: 12 / 10em;
-}
-
-h2, h3, h4, h5, h6 {
-	margin-bottom: 0.5em;
-	color: darken(#36393B, 12%);
-	text-shadow: 0 1px 0 #FFFFFF;
-}
-
-h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-	margin-top: 0;
 }
 
 //=== General ===//
@@ -130,9 +127,12 @@ header {
 	}
 	
 	h1 {
+		color: lighten(#36393B, 50%);
 		margin: 0 16px;
 		line-height: 35 / 21em;
 		vertical-align: top;
+		font-size: 21 / 10em;
+		text-shadow: none;
 		
 		span {
 			color: lighten(#36393B, 35%);
