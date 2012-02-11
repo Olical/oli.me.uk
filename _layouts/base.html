@@ -24,7 +24,7 @@
 				
 				<nav>
 					<ul>
-						<li><a href='/about.html'>About</a></li><li><a href='/contact.html'>Contact</a></li>
+						{% for index in (1..10) %}{% for p in site.pages %}{% if p.menu == index %}<li><a {% if p.url == page.url %}class='current' {% endif %}href='{{ p.url }}'>{{ p.title }}</a></li>{% endif %}{% endfor %}{% endfor %}
 					</ul>
 				</nav>
 				
