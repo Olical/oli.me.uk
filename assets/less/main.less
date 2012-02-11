@@ -150,6 +150,20 @@ h6 {
 }
 
 //=== General ===//
+div.post-date {
+	position: absolute;
+	right: 0;
+	top: 35 / 10em;
+	
+	p {
+		padding: 30px;
+		margin: 0;
+		color: darken(#EEEEEE, 10%);
+		font-size: 40 / 10em;
+		line-height: 1em;
+	}
+}
+
 .content {
 	.span-10;
 	.prefix-3;
@@ -162,10 +176,29 @@ h6 {
 	padding-bottom: 12px;
 }
 
-.top-keyline {
+.top-keyline, div.post-meta {
 	border-top: 2px solid #45484B;
 	margin-top: 12px;
 	padding-top: 12px;
+}
+
+div.post-meta {
+	margin-top: 30px;
+	
+	div.comments {
+		margin-top: 30px;
+	}
+	
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		
+		li {
+			display: inline;
+			margin-right: 0.4em;
+		}
+	}
 }
 
 div.container {
