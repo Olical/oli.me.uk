@@ -76,13 +76,16 @@ p + p {
 	text-indent: 2em;
 }
 
-blockquote {
+blockquote, div.highlight {
 	width: 80%;
 	margin: 0 auto;
 	padding: 5px 20px 10px 20px;
-	background-color: darken(#EEEEEE, 5%);
-	box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.6);
+	box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.6);
 	border-radius: 4px;
+}
+
+blockquote {
+	background-color: darken(#EEEEEE, 5%);
 	
 	p {
 		color: lighten(#36393B, 10%);
@@ -90,6 +93,15 @@ blockquote {
 	
 	footer p:before {
 		content: '— ';
+	}
+}
+
+div.highlight {
+	background-color: darken(#36393B, 10%);
+	font-size: 12 / 10em;
+	
+	pre {
+		margin-bottom: 0;
 	}
 }
 
