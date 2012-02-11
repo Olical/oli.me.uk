@@ -1,5 +1,10 @@
 {% if paginator.total_pages > 1 %}
 <div class='pagination'>
+	<p>
+	{% if paginator.previous_page %}
+		&larr; <a class='previous' href='{% if paginator.previous_page == 1 %}/{% else %}/page{{ paginator.previous_page }}{% endif %}'>previous</a>
+	{% endif %}
+	
 	{% for i in (1..paginator.total_pages) %}
 		{% if i == paginator.page %}
 			<strong>{{ i }}</strong>
@@ -11,7 +16,8 @@
 	{% endfor %}
 	
 	{% if paginator.next_page %}
-		<a class='next' href='/page{{ paginator.next_page}}'>next</a> &rarr;
+		<a class='next' href='/page{{ paginator.next_page }}'>next</a> &rarr;
 	{% endif %}
+	</p>
 </div>
 {% endif %}
