@@ -16,6 +16,14 @@ But it does more than just center any way you want. It also allows you to center
 Please bear in mind that I am using [prefixfree](https://github.com/LeaVerou/prefixfree) on this site, so I don't have to worry about vendor prefixes. However, **you do**. Fear not, if you do not want to include prefixfree in your code you can run your flexbox CSS through [prefixr](http://prefixr.com/). It is the web app equivalent of prefixfree. Let's get started then&hellip;
 
 {% highlight css %}
+div.center {
+	/* This is used to center the parent */
+	/* Apparently display: box; stops margin: 0 auto; */
+	width: 200px;
+	height: 200px;
+	margin: 20px auto;
+}
+
 div.parent {
 	/* Flexbox code goes from here... */
 	display: box;
@@ -24,14 +32,13 @@ div.parent {
 	/* To here! */
 	
 	border: 1px solid #000000;
-	width: 100px;
-	height: 100px;
-	margin: 20px auto;
+	width: 200px;
+	height: 200px;
 }
 
 div.parent div {
-	width: 30px;
-	height: 30px;
+	width: 50px;
+	height: 50px;
 	background-color: #AA3333;
 }
 {% endhighlight %}
@@ -39,12 +46,16 @@ div.parent div {
 I think we should begin wit~ wait what, **that's it?!** Whoa. It only takes that code between the comments. The rest is decorative. It may seem ridiculously simple, but that is all you need to center that elements child vertically and horizontally. `mind = 'blown';`. Let's take a gander at the hugely complicated HTML that compliments this brain meltingly difficult CSS.
 
 {% highlight html %}
-<div class='parent'>
-	<div></div>
+<div class='center'>
+	<div class='parent'>
+		<div></div>
+	</div>
 </div>
 {% endhighlight %}
 
-Yeah. I don't hear any screaming developers. Easy as &pi;.
+Yeah. I don't hear any screaming developers. Easy as &pi;. Here is a working example.
+
+<iframe class='example' src='/examples/center-flexbox.html'>.</iframe>
 
 ## Need an alternative?
 
