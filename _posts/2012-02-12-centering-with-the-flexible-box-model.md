@@ -94,6 +94,10 @@ Now for the HTML, it is very simple but still. As you may have guessed from the 
 <div class='to-center'></div>
 {% endhighlight %}
 
+And here is the example of the more cross-browser method.
+
+<iframe class='example' src='/examples/center-cross-browser.html'>.</iframe>
+
 Hopefully, when you are asked to center something vertically, you will at least know where to start now. Flexbox is amazing, but poorly supported. Give it time and we will be using it all over the place. I am guessing about a year before the first "flexbox grid system" is released.
 
 ## Dive deeper
