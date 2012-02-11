@@ -76,6 +76,17 @@ p + p {
 	text-indent: 2em;
 }
 
+blockquote {
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 0 !important;
+	padding: 0 20px;
+	
+	footer p:before {
+		content: '— ';
+	}
+}
+
 h1 {
 	font-size: 24 / 10em;
 }
@@ -101,13 +112,13 @@ h6 {
 }
 
 //=== General ===//
-.bottom-keyline {
+.bottom-keyline, blockquote {
 	border-bottom: 2px solid #45484B;
 	margin-bottom: 12px;
 	padding-bottom: 12px;
 }
 
-.top-keyline {
+.top-keyline, blockquote {
 	border-top: 2px solid #45484B;
 	margin-top: 12px;
 	padding-top: 12px;
