@@ -30,7 +30,7 @@ I despise writing prefixes, it feels so backwards. I suppose less helps with it'
 
 I am hosting this site on GitHub pages which has amazing Jekyll support. All I have to do is run `git push` and GitHub will compile and deploy my blog.
 
-You may have noticed by now how some paragraphs are indented. I have focused heavly on typography, and this technique is reccomended. Some people indent every paragraph, but the correct way is to only indent a paragraph if it is preceded by another paragraph.
+You may have noticed by now how some paragraphs are indented. I have focused heavily on typography, and this technique is recommended. Some people indent every paragraph, but the correct way is to only indent a paragraph if it is preceded by another paragraph.
 
 I have also added hyphenation and made sure my lines are the optimal length. I want it to be as easy to read as possible. Because this is a development blog, I have tried to add nice syntax highlighting too. Here's how it looks.
 
