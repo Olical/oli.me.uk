@@ -94,7 +94,7 @@ Now for the HTML, it is very simple but still. As you may have guessed from the 
 <div class='to-center'></div>
 {% endhighlight %}
 
-And here is the example of the more cross-browser method.
+And here is the cross-browser method in action.
 
 <iframe class='example' src='/examples/center-cross-browser.html'>.</iframe>
 
