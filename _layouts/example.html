@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% if page.title %}{{ page.title }} // {% endif %} Code example from oli.me.uk</title>
+		<meta charset='utf-8'>
+		<meta name='robots' content='noindex'>
+		<!--[if lt IE 9]><script type='text/javascript' src='/assets/javascript/html5.min.js'></script><![endif]-->
+		<link rel='stylesheet' type='text/css' href='/assets/css/normalize.css/normalize.css'>
+		{% for css in page.css %}<link rel='stylesheet' type='text/css' href='/examples/assets/css/{{ css }}.css'>{% endfor %}
+		{% for less in page.less %}<link rel='stylesheet/less' type='text/css' href='/examples/assets/less/{{ less }}.less'>{% endfor %}
+		<script type='text/javascript' src='/assets/javascript/less.js/dist/less-1.2.1.js'></script>
+		<script type='text/javascript' src='/assets/javascript/prefixfree/prefixfree.min.js'></script>
+	</head>
+	
+	<body>
+		{{ content }}
+		{% for script in page.script %}<script type='text/javascript' src='/examples/assets/javascript/{{ script }}.js'></script>{% endfor %}
+	</body>
+</html>
