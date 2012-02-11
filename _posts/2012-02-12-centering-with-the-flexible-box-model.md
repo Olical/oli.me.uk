@@ -7,7 +7,7 @@ tags:
  - centering
 ---
 
-For those of you that have not heard of the flexible box model, brace yourselves. When it is more widely supported you will no longer need to silently (or audioably) scream to yourself when vertically centering a variable height block level element.
+For those of you that have not heard of the flexible box model, brace yourselves. When it is more widely supported you will no longer need to silently (or audibly) scream to yourself when vertically centering a variable height block level element.
 
 But it does more than just center any way you want. It also allows you to center multiple elements and space them how you want. It may sound too good to be true, but it isn't (for once). It is just a little&hellip; new. So please keep that in mind when considering using it.
 
@@ -36,7 +36,7 @@ div.parent div {
 }
 {% endhighlight %}
 
-I think we should begin wit~ wait what, **that's it?!** Woah. It only takes that code between the comments. The rest is decorative. It may seem rediculously simple, but that is all you need to center that elements child vertically and horizontally. `mind = 'blown';`. Let's take a gander at the hugely complicated HTML that compliments this brain meltingly difficult CSS.
+I think we should begin wit~ wait what, **that's it?!** Whoa. It only takes that code between the comments. The rest is decorative. It may seem ridiculously simple, but that is all you need to center that elements child vertically and horizontally. `mind = 'blown';`. Let's take a gander at the hugely complicated HTML that compliments this brain meltingly difficult CSS.
 
 {% highlight html %}
 <div class='parent'>
@@ -48,9 +48,9 @@ Yeah. I don't hear any screaming developers. Easy as &pi;.
 
 ## Need an alternative?
 
-Okay, so maybe it is not the most widely supported feature out there. There's a good chance your client won't take "it is a lot easier for the developer" to not support anything other than the latest browsers. And I am all for realistic code, not stuff that will only work in the nightly of Chrome. On a Wednesday. If the wind is blowing in a southernly direction.
+Okay, so maybe it is not the most widely supported feature out there. There's a good chance your client won't take "it is a lot easier for the developer" to not support anything other than the latest browsers. And I am all for realistic code, not stuff that will only work in the nightly of Chrome. On a Wednesday. If the wind is blowing in a southerly direction.
 
-So here is my favorite way to vertically center an element which should work in pretty much every browser you need it to. Lets look at the CSS first.
+So here is my favourite way to vertically center an element which should work in pretty much every browser you need it to. Lets look at the CSS first.
 
 {% highlight css %}
 html, body {
