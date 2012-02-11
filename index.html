@@ -7,7 +7,15 @@ menu: 1
 <div class='content'>
 	{% for post in site.posts %}
 	<article>
-		<h2>{{ post.title }}<span class='date'>{{ post.date | date: '%d/%m/%y' }}</span></h2>
+		<h2><a href='{{ post.url }}'>{{ post.title }}</a><span class='date'>{{ post.date | date: '%d/%m/%y' }}</span></h2>
+		<p>{{ post.content | strip_html | truncatewords: 25 }}&hellip; <a href='{{ post.url }}'>full post &rarr;</a></p>
+		
+		<div class='post-meta'>
+			{% include tags.html %}
+			<p><a href='{{ post.url }}#disqus_thread' data-disqus-identifier='{{ post.title }}'>0 Comments and 0 Reactions</a></p>
+		</div>
 	</article>
 	{% endfor %}
 </div>
+
+{% include comment-count.html %}

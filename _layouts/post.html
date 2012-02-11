@@ -11,12 +11,7 @@ layout: base
 	{{ content }}
 	
 	<div class='post-meta'>
-		{% if page.tags %}
-		<ul class='tags'>
-			<li>Tags:</li>
-			{% for tag in page.tags %}<li><a href='/tags.html#{{ tag }}'>{{ tag }}</a></li>{% endfor %}
-		</ul>
-		{% endif %}
+		{% include tags.html %}
 		
 		<div class='comments'>
 			{% include comments.html %}
