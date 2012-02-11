@@ -1,0 +1,17 @@
+{% if paginator.total_pages > 1 %}
+<div class='pagination'>
+	{% for i in (1..paginator.total_pages) %}
+		{% if i == paginator.page %}
+			<strong>{{ i }}</strong>
+			{% elsif i != 1 %}
+			<a href='/page{{ i }}'>{{ i }}</a>
+			{% else %}
+			<a href='/'>1</a>
+		{% endif %}
+	{% endfor %}
+	
+	{% if paginator.next_page %}
+		<a class='next' href='/page{{ paginator.next_page}}'>next</a> &rarr;
+	{% endif %}
+</div>
+{% endif %}
