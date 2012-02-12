@@ -1,8 +1,6 @@
 // Load the more framework
 @import 'more/more';
 
-// Main colors from http://www.colourlovers.com/palette/90734/Newly_Risen_Moon
-
 //=== Font families ===//
 @f-arvo: 'Arvo', serif;
 @f-droid-sans: 'Droid Sans', sans-serif;
@@ -46,7 +44,7 @@ q {
 	quotes: "“" "”" "‘" "’";
 }
 
-p, div.content li {
+p, .content li {
 	font-size: 16 / 10em;
 	color: darken(#36393B, 10%);
 	line-height: 1.4em;
@@ -121,9 +119,34 @@ div.highlight {
 	font-size: 12 / 10em;
 }
 
-span.date {
-	color: darken(#EEEEEE, 20%);
-	float: right;
+article {
+	div.title {
+		border-bottom: 1px solid lighten(#45484B, 10%);
+		
+		h1, p.date {
+			clear: none;
+			display: inline-block;
+			vertical-align: bottom;
+			margin: 0;
+			padding: 0;
+		}
+		
+		h1 {
+			font-size: 21 / 10em;
+			line-height: 25 / 21em;
+			width: 80%;
+			border-bottom: none;
+			padding-bottom: 10px;
+		}
+		
+		p.date {
+			color: darken(#EEEEEE, 20%);
+			width: 20%;
+			text-align: right;
+			line-height: 25 / 16em;
+			float: right;
+		}
+	}
 }
 
 h1 {
@@ -236,13 +259,14 @@ div.header {
 	h1 {
 		color: lighten(#36393B, 50%);
 		margin: 0 16px;
-		line-height: 35 / 21em;
+		line-height: 35 / 18em;
 		vertical-align: top;
-		font-size: 21 / 10em;
+		font-size: 18 / 10em;
 		text-shadow: none;
 		
 		span {
 			color: lighten(#36393B, 35%);
+			font-size: 15 / 18em;
 		}
 	}
 	

@@ -1,0 +1,29 @@
+---
+layout: example
+title: Centering in a cross-browser fasion
+---
+
+<style type='text/css'>
+	html, body {
+		/* This allows us to center in the height of the browser. */
+		height: 100%;
+	}
+	
+	div.aligner {
+		height: 50%;
+		
+		/* This is the negative version of half the height of the element we wish to center. */
+		margin-bottom: -100px;
+	}
+	
+	div.to-center {
+		/* This is the element to center vertically. */
+		width: 200px;
+		height: 200px;
+		margin: 0 auto;
+		background-color: #AA3333;
+	}
+</style>
+
+<div class='aligner'></div>
+<div class='to-center'></div>

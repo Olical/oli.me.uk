@@ -1,0 +1,38 @@
+---
+layout: example
+title: Centering with the flexible box model
+---
+
+<style type='text/css'>
+	div.center {
+		/* This is used to center the parent */
+		/* Apparently display: box; stops margin: 0 auto; */
+		width: 200px;
+		height: 200px;
+		margin: 20px auto;
+	}
+	
+	div.parent {
+		/* Flexbox code goes from here... */
+		display: box;
+		box-pack: center;
+		box-align: center;
+		/* To here! */
+		
+		border: 1px solid #000000;
+		width: 200px;
+		height: 200px;
+	}
+	
+	div.parent div {
+		width: 50px;
+		height: 50px;
+		background-color: #AA3333;
+	}
+</style>
+
+<div class='center'>
+	<div class='parent'>
+		<div></div>
+	</div>
+</div>
