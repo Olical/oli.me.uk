@@ -25,7 +25,7 @@
 				
 				<nav>
 					<ul>
-						{% for index in (1..10) %}{% for p in site.pages %}{% if p.menu == index %}<li><a {% if p.url == page.url %}class='current' {% endif %}href='{{ p.url }}'>{{ p.title }}</a></li>{% endif %}{% endfor %}{% endfor %}
+						{% if page.url contains '/page' %}<li><a class='current' href='/'>Home</a></li>{% else %}<li><a {% if page.url == '/index.html' %}class='current' {% endif %}href='/'>Home</a></li>{% endif %}{% for index in (1..10) %}{% for p in site.pages %}{% if p.menu == index %}<li>{{ cleanurl }}<a {% if p.url == page.url %}class='current' {% endif %}href='{{ p.url }}'>{{ p.title }}</a></li>{% endif %}{% endfor %}{% endfor %}
 					</ul>
 				</nav>
 				
