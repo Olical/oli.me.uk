@@ -6,7 +6,7 @@ layout: nil
 	<channel>
 		<title>oli.me.uk</title>
 		<link>http://oli.me.uk</link>
-		<atom:link href='http://oli.me.uk/rss.xml' rel='self' type='application/rss+xml' />
+		<atom:link href='http://feeds.feedburner.com/oli-webdev' rel='self' type='application/rss+xml' />
 		<description>Frontend web development blog by Oliver Caldwell</description>
 		<language>en-gb</language>
 		<pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
