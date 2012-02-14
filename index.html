@@ -7,7 +7,7 @@ layout: base
 	<article>
 		<div class='title'>
 			<h1><a href='{{ post.url }}'>{{ post.title }}</a></h1>
-			<p class='date'>{{ post.date | date: '%d/%m/%y' }}</p>
+			<p class='date'>{% include date.html %}</p>
 		</div>
 		
 		<p>{{ post.content | strip_html | truncatewords: 40 }} <a href='{{ post.url }}'>full post</a> &rarr;</p>
