@@ -57,7 +57,7 @@ I think we should begin wit~ wait what, **that's it?!** Whoa. It only takes that
 
 Yeah. I don't hear any screaming developers. Easy as &pi;. Here is a working example.
 
-<iframe class='example' src='/examples/center-flexbox.html'>.</iframe>
+<iframe class='example' src='/examples/vertical-center/flexbox.html'>.</iframe>
 
 ## Need an alternative?
 
@@ -98,7 +98,7 @@ Now for the HTML, it is very simple but still. As you may have guessed from the 
 
 And here is the cross-browser method in action.
 
-<iframe class='example' src='/examples/center-cross-browser.html'>.</iframe>
+<iframe class='example' src='/examples/vertical-center/cross-browser.html'>.</iframe>
 
 Hopefully, when you are asked to center something vertically, you will at least know where to start now. Flexbox is amazing, but poorly supported. Give it time and we will be using it all over the place. I am guessing about a year before the first "flexbox grid system" is released.
 
