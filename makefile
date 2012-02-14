@@ -18,3 +18,9 @@ javascript:
 
 update-submodules:
 	git submodule foreach git pull origin master
+
+jekyll:
+	jekyll --pygments
+
+jekyll-server:
+	jekyll --auto --server --pygments
