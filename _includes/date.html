@@ -1,0 +1,7 @@
+<p>
+{% if post.date %}
+	Posted on {{ post.date | date: '%d/%m/%y' }} at {{ post.date | date: '%H:%M' }}
+{% else %}
+	{{ page.date | date: '%d/%m/%y %H:%M' }}
+{% endif %}
+</p>
