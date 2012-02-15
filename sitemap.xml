@@ -8,13 +8,6 @@ layout: nil
 		<priority>1.0</priority>
 	</url>
 	
-	{% for page in site.posts %}
-	<url>
-		<loc>http://oli.me.uk{{ page.url }}</loc>
-		<priority>0.8</priority>
-	</url>
-	{% endfor %}
-	
 	{% for page in site.html_pages %}
 	{% if page.layout != 'example' %}
 	<url>
@@ -22,5 +15,12 @@ layout: nil
 		<priority>0.9</priority>
 	</url>
 	{% endif %}
+	{% endfor %}
+	
+	{% for page in site.posts %}
+	<url>
+		<loc>http://oli.me.uk{{ page.url }}</loc>
+		<priority>0.8</priority>
+	</url>
 	{% endfor %}
 </urlset>
