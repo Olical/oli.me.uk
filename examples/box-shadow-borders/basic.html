@@ -1,0 +1,31 @@
+---
+layout: example
+title: Basic borders with box shadows
+---
+
+<style type='text/css'>
+	div.shadow-border {
+		width: 200px;
+		height: 200px;
+		sizing: border-box;
+		padding: 10px;
+		background-color: rgba(0, 0, 0, 0.25);
+		border: 3px solid #333333;
+		box-shadow: 0 0 0 2px #338833;
+	}
+	
+	html, body {
+		width: 100%;
+		height: 100%;
+	}
+	
+	body {
+		display: box;
+		box-pack: center;
+		box-align: center;
+	}
+</style>
+
+<div class='shadow-border'>
+	<p>Border? Nope, chuck-shadow!</p>
+</div>
