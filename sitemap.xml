@@ -7,7 +7,9 @@ layout: nil
 	
 	{% for page in site.html_pages %}
 	{% if page.layout != 'example' %}
+	{% if page.url != '/index.html' %}
 	<url><loc>http://oli.me.uk{{ page.url }}</loc></url>
+	{% endif %}
 	{% endif %}
 	{% endfor %}
 	
