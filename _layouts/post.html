@@ -1,5 +1,8 @@
 ---
 layout: base
+script:
+ - https://platform.twitter.com/widgets.js
+ - https://apis.google.com/js/plusone.js
 ---
 
 <div class='post-date'>
@@ -12,6 +15,7 @@ layout: base
 	
 	<div class='post-meta'>
 		{% include tags.html %}
+		{% include social.html %}
 		
 		<div class='comments'>
 			{% include comments.html %}

@@ -36,5 +36,7 @@
 		<div class='container'>
 			{{ content }}
 		</div>
+		
+		{% for script in page.script %}<script type='text/javascript' src='{{ script }}'></script>{% endfor %}
 	</body>
 </html>
