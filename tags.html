@@ -1,18 +1,24 @@
 ---
 layout: base
 title: Tags
-menu: 4
+menu: 3
 ---
 
 <div class='content'>
 	<h1>Tags</h1>
 	
-	<p>This is a list of every tag in use on this site. Under each heading is a list of each post that is tagged with it.</p>
+	<p>Use the text box below to search through the tag list. The most relevant tag to your search will list it's related posts. You can also click a specific tag to expand it manually.</p>
 	
-	{% for tag in site.tags %}
-	<h2 id='{{ tag.first }}'>{{ tag.first }}</h2>
-	<ul>
-		{% for post in site.tags[tag.first] %}<li><a href='{{ post.url }}'>{{ post.title }}</a></li>{% endfor %}
-	</ul>
-	{% endfor %}
+	<input type='text' class='tag-search'>
+	
+	<ul class='tag-list'>
+		{% for tag in site.tags %}
+		<li data-tag='{{ tag.first }}'>
+			<h2>{{ tag.first }}</h2>
+			<ul>
+				{% for post in site.tags[tag.first] %}<li><a href='{{ post.url }}'>{{ post.title }}</a></li>{% endfor %}
+			</ul>
+		</li>
+		{% endfor %}
+	</div>
 </div>
