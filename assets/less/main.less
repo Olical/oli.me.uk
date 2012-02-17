@@ -149,6 +149,54 @@ h6 {
 }
 
 //=== General ===//
+input.tag-search {
+	width: 50%;
+	margin: 10px auto;
+	display: block;
+	background: none;
+	border: 0;
+	padding: 5px;
+	border-radius: 4px;
+	background-color: #666666;
+	color: #FFFFFF;
+	font-size: 1.6em;
+}
+
+ul.tag-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	column-count: 2;
+	
+	li[data-tag] {
+		opacity: 0.5;
+		transition: opacity 400ms ease;
+		
+		h2 {
+			font-size: 1em;
+			border: 0;
+			margin-top: 10px;
+		}
+		
+		h2:hover {
+			cursor: pointer;
+		}
+		
+		ul {
+			display: none;
+			font-size: 0.5em;
+		}
+	}
+	
+	li[data-tag].show {
+		opacity: 1;
+		
+		ul {
+			display: block;
+		}
+	}
+}
+
 div.post-date {
 	position: absolute;
 	right: 0;

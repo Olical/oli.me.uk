@@ -7,6 +7,7 @@ css_input = assets/css/normalize.css/normalize.css\
 less_input = assets/less/main.less
 
 javascript_input = 	assets/javascript/mootools.js\
+					assets/javascript/string_score/string_score.js\
 					assets/javascript/main.js
 
 default: css javascript site

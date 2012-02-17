@@ -10,3 +10,6 @@
 [submodule "assets/javascript/prefixfree"]
 	path = assets/javascript/prefixfree
 	url = git://github.com/LeaVerou/prefixfree.git
+[submodule "assets/javascript/string_score"]
+	path = assets/javascript/string_score
+	url = git://github.com/joshaven/string_score.git
