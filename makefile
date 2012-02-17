@@ -6,9 +6,10 @@ css_input = assets/css/normalize.css/normalize.css\
 
 less_input = assets/less/main.less
 
-javascript_input = 
+javascript_input = 	assets/javascript/mootools.js\
+					assets/javascript/main.js
 
-default: css site
+default: css javascript site
 
 css:
 	(cat $(css_input); if [ "${less_input}" ]; then lessc $(less_input); fi) | cleancss -o $(css_output_file)
