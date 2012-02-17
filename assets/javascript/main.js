@@ -27,7 +27,7 @@
 	 * Filters the tag list by the content of the tag search box
 	 * Uses string_score
 	 */
-	function tagSearch(search) {
+	function tagSearch() {
 		// Initialise variables
 		var i = null,
 			best = null,
