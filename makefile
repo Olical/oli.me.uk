@@ -8,7 +8,7 @@ less_input = assets/less/main.less
 
 javascript_input = 
 
-default: css
+default: css site
 
 css:
 	(cat $(css_input); if [ "${less_input}" ]; then lessc $(less_input); fi) | cleancss -o $(css_output_file)
@@ -19,8 +19,8 @@ javascript:
 update-submodules:
 	git submodule foreach git pull origin master
 
-jekyll:
+site:
 	jekyll --pygments
 
-jekyll-server:
+server:
 	jekyll --auto --server --pygments
