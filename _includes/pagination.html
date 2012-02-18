@@ -1,23 +1,15 @@
 {% if paginator.total_pages > 1 %}
-<div class='pagination'>
-	<p>
+<div class='span-4 suffix-1 alpha'>
 	{% if paginator.previous_page %}
-		&larr; <a class='previous' href='{% if paginator.previous_page == 1 %}/{% else %}/page{{ paginator.previous_page }}{% endif %}'>previous</a>
+	<p>&larr; <a href='{% if paginator.previous_page == 1 %}/{% else %}/page{{ paginator.previous_page }}{% endif %}'>Newer</a></p>
 	{% endif %}
-	
-	{% for i in (1..paginator.total_pages) %}
-		{% if i == paginator.page %}
-			<strong>{{ i }}</strong>
-			{% elsif i != 1 %}
-			<a href='/page{{ i }}'>{{ i }}</a>
-			{% else %}
-			<a href='/'>1</a>
-		{% endif %}
-	{% endfor %}
-	
+	&nbsp;
+</div>
+
+<div class='span-4 prefix-1 omega older-pagination'>
+	&nbsp;
 	{% if paginator.next_page %}
-		<a class='next' href='/page{{ paginator.next_page }}'>next</a> &rarr;
+	<p><a href='/page{{ paginator.next_page }}'>Older</a> &rarr;</p>
 	{% endif %}
-	</p>
 </div>
 {% endif %}
