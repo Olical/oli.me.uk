@@ -1,7 +1,7 @@
 {% if paginator.total_pages > 1 %}
 <div class='span-4 suffix-1 alpha'>
 	{% if paginator.previous_page %}
-	<p>&larr; <a href='{% if paginator.previous_page == 1 %}/{% else %}/page{{ paginator.previous_page }}{% endif %}'>Newer</a></p>
+	<p>&larr; <a href='{% if paginator.previous_page == 1 %}/{% else %}/page{{ paginator.previous_page }}{% endif %}'>Newer page</a></p>
 	{% endif %}
 	&nbsp;
 </div>
@@ -9,7 +9,7 @@
 <div class='span-4 prefix-1 omega older-pagination'>
 	&nbsp;
 	{% if paginator.next_page %}
-	<p><a href='/page{{ paginator.next_page }}'>Older</a> &rarr;</p>
+	<p><a href='/page{{ paginator.next_page }}'>Older page</a> &rarr;</p>
 	{% endif %}
 </div>
 {% endif %}
