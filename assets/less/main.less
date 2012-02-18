@@ -23,6 +23,16 @@ h1, h2, h3, h4, h5, h6 {
 	border-bottom: 1px solid lighten(#45484B, 10%);
 }
 
+div.pagination {
+	font-size: 16 / 10em;
+	color: darken(#36393B, 10%);
+}
+
+code {
+	color: #BBBBBB;
+	font-family: @f-droid-sans-mono;
+}
+
 #dsq-content {
 	a {
 		border: 0;
@@ -40,6 +50,10 @@ h1, h2, h3, h4, h5, h6 {
 		.dsq-global-toolbar-left li {
 			font-size: 1.2em;
 		}
+	}
+	
+	.dsq-attach-media .dsq-attach-media-container span {
+		line-height: 1.3em;
 	}
 }
 
@@ -119,7 +133,6 @@ blockquote, div.highlight, iframe.example {
 iframe.example {
 	border: 0;
 	padding: 0;
-	min-height: 330px;
 }
 
 blockquote {
@@ -137,6 +150,10 @@ blockquote {
 div.highlight {
 	background-color: darken(#36393B, 10%);
 	font-size: 12 / 10em;
+}
+
+div.older-pagination {
+	text-align: right;
 }
 
 div.content article h1 {
@@ -212,7 +229,7 @@ ul.tag-list {
 	
 	li[data-tag].show {
 		opacity: 1;
-		background-color: rgba(0, 0, 0, 0.1);
+		background-color: #D6D6D6;
 		
 		ul {
 			display: block;

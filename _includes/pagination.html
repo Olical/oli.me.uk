@@ -1,23 +1,35 @@
+{% if page.type == 'post' %}
+<div class='pagination'>
+	<div class='span-4 suffix-1 alpha'>
+		{% if page.next %}
+		&larr; <a href='{{ page.next.url }}' title='{{ page.next.title }}'>Next post</a>
+		{% endif %}
+		&nbsp;
+	</div>
+
+	<div class='span-4 prefix-1 omega older-pagination'>
+		&nbsp;
+		{% if page.previous %}
+		<a href='{{ page.previous.url }}' title='{{ page.previous.title }}'>Previous post</a> &rarr;
+		{% endif %}
+	</div>
+</div>
+{% else %}
 {% if paginator.total_pages > 1 %}
 <div class='pagination'>
-	<p>
-	{% if paginator.previous_page %}
-		&larr; <a class='previous' href='{% if paginator.previous_page == 1 %}/{% else %}/page{{ paginator.previous_page }}{% endif %}'>previous</a>
-	{% endif %}
-	
-	{% for i in (1..paginator.total_pages) %}
-		{% if i == paginator.page %}
-			<strong>{{ i }}</strong>
-			{% elsif i != 1 %}
-			<a href='/page{{ i }}'>{{ i }}</a>
-			{% else %}
-			<a href='/'>1</a>
+	<div class='span-4 suffix-1 alpha'>
+		{% if paginator.previous_page %}
+		&larr; <a href='{% if paginator.previous_page == 1 %}/{% else %}/page{{ paginator.previous_page }}{% endif %}'>Next page</a>
 		{% endif %}
-	{% endfor %}
-	
-	{% if paginator.next_page %}
-		<a class='next' href='/page{{ paginator.next_page }}'>next</a> &rarr;
-	{% endif %}
-	</p>
+		&nbsp;
+	</div>
+
+	<div class='span-4 prefix-1 omega older-pagination'>
+		&nbsp;
+		{% if paginator.next_page %}
+		<a href='/page{{ paginator.next_page }}'>Previous page</a> &rarr;
+		{% endif %}
+	</div>
 </div>
+{% endif %}
 {% endif %}
