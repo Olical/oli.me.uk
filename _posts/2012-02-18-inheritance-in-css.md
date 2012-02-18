@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Inheritance in CSS
-date: 2012-02-18 00:00:00
+date: 2012-02-18 12:30:00
 tags:
  - css
  - less
