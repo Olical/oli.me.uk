@@ -30,7 +30,7 @@ var colors = {
 /**
  * Converts a hexadecimal color to an array
  * Containing it's red, green and blue values
- *
+ * 
  * @param {String} color Hexadecimal color
  * @return {Array} Red, green and blue values of the color
  */
@@ -59,7 +59,7 @@ function hex2array(color) {
  * Converts an RGB color to an array
  * Containing it's red, green and blue values
  * The RGB color must resemble `rgb(0, 0, 0)`
- *
+ * 
  * @param {String} color RGB color
  * @return {Array} Red, green and blue values of the color
  */
@@ -85,7 +85,7 @@ function rgb2array(color) {
  * Converts a color to an array by it's name
  * Containing it's red, green and blue values
  * Will return false if the color was not recognised
- *
+ * 
  * @param {String} color A colors name
  * @return {Array|Boolean} Red, green and blue values of the color or false if the color could not be found
  */
@@ -114,4 +114,19 @@ console.log(rgb2array('rgb(10,  20  ,200)'));
 console.log(name2array('Red'));
 {% endhighlight %}
 
-Whew! That's a lot of code! I have had to leave out a lot of the color names simply because of how many there are. You can find the full code in [the fiddle I created](http://jsfiddle.net/Wolfy87/XDnEL/). These functions will convert hexadecimal, RGB and color names to an array containing their RGB values. I have not added functions to convert the other way in here because they will come with the Color class I am going to write. Well, just in case you really need to convert something now, here is how to convert back to an RGB value.
+Whew! That's a lot of code! I have had to leave out a lot of the color names simply because of how many there are. You can find the full code in [the fiddle I created](http://jsfiddle.net/Wolfy87/XDnEL/). These functions will convert hexadecimal, RGB and color names to an array containing their RGB values. I have not added functions to convert the other way in here because they will come with the Color class I am going to write. Well, just in case you really need to convert something now, here is how to convert back to an RGB value. Pretty simple but useful too.
+
+{% highlight javascript %}
+/**
+ * Converts an RGB array to an RGB string
+ * 
+ * @param {Array} color An array containing the red, green and blue values of a color
+ * @return {String} The RGB string of the color array
+ */
+function array2rgb(color) {
+	// Combine and return the values
+	return 'rgb(' + color.join() + ')';
+}
+{% endhighlight %}
+
+So there you have it. Three functions to convert colors into a JavaScript friendly format and one to go back the other way. You will find these and more as I rewrite [my Color class](https://github.com/Wolfy87/Color). I also plan to add hue, saturation and lightness control to my class. Now that is going to be fun. I hope these functions will help some people out. If they do, let me know!
