@@ -12,21 +12,6 @@ Quite a while ago I wrote some JavaScript to help with manipulating colors. I wr
 Now, to rewrite this I am going to need some functions to convert colors in various formats to a base format. I will be using an array as a base. This array will simply contain the red green and blue values for the color. In the final class everything will be orderly and packaged away with nice function names. For now, I am just going to write some color conversion functions that you are free to use where ever you want.
 
 {% highlight javascript %}
-// Color names, used in a function down below
-var colors = {
-	aliceblue: [240, 248, 255],
-	antiquewhite: [250, 235, 215],
-	/*
-		...
-		To get all of the colors please visit the fiddle
-		http://jsfiddle.net/Wolfy87/XDnEL/
-		There were just too many to drop into here
-		...
-	*/
-	yellow: [255, 255, 0],
-	yellowgreen: [154, 205, 50]
-};
-
 /**
  * Converts a hexadecimal color to an array
  * Containing it's red, green and blue values
@@ -80,6 +65,20 @@ function rgb2array(color) {
 	return rgb;
 }
 
+// Color names, used in a function down below
+var colors = {
+	aliceblue: [240, 248, 255],
+	antiquewhite: [250, 235, 215],
+	/*
+		...
+		To get all of the colors please visit the fiddle
+		http://jsfiddle.net/Wolfy87/XDnEL/
+		There were just too many to drop into here
+		...
+	*/
+	yellow: [255, 255, 0],
+	yellowgreen: [154, 205, 50]
+};
 
 /**
  * Converts a color to an array by it's name
