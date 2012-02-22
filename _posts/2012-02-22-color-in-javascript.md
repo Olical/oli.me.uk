@@ -107,7 +107,7 @@ function name2array(color) {
 
 console.log(hex2array('#DDCCAA'));
 console.log(rgb2array('rgb(10,  20  ,200)'));
-console.log(name2array('Red'));
+console.log(name2array('Indian Red'));
 {% endhighlight %}
 
 Whew! That's a lot of code! I have had to leave out a lot of the color names simply because of how many there are. You can find the full code in [the fiddle I created](http://jsfiddle.net/Wolfy87/XDnEL/). These functions will convert hexadecimal, RGB and color names to an array containing their RGB values. I have not added functions to convert the other way in here because they will come with the Color class I am going to write. Well, just in case you really need to convert something now, here is how to convert back to an RGB value. Pretty simple but useful too.
