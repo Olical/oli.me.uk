@@ -89,18 +89,15 @@ var colors = {
  * @return {Array|Boolean} Red, green and blue values of the color or false if the color could not be found
  */
 function name2array(color) {
-	// Initialise variables
-	var i = null;
+	// Clean up the colors name
+	color = color.toLowerCase().replace(/[^a-z]/g, '');
 	
-	// Loop over all of the color names
-	for(i in colors) {
-		// Check if the color matches
-		if(colors.hasOwnProperty(i) && i === color.toLowerCase()) {
-			// It does, return it's RGB array
-			// We have to build a new array otherwise the reference to the original will be returned
-			// If this happens changes made to the returned array will effect this one
-			return [colors[i][0], colors[i][1], colors[i][2]];
-		}
+	// Check if we have a matching color
+	if(colors.hasOwnProperty(color)) {
+		// We do, return it
+		// We have to build a new array otherwise the reference to the original will be returned
+		// If this happens changes made to the returned array will affect this one
+		return [colors[color][0], colors[color][1], colors[color][2]];
 	}
 	
 	// Default to returning false
