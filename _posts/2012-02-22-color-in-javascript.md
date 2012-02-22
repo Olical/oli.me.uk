@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Color in JavaScript
-date: 2012-02-22 00:00:00
+date: 2012-02-22 22:05:00
 tags:
  - javascript
  - color
