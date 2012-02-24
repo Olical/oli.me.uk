@@ -74,9 +74,28 @@ That line is taken from the NPM website. It should install NPM onto your system.
 
 {% highlight bash %}
 # Install the less package
+# The -g means it is a global package, so it will be accessible via the terminal
 sudo npm install less -g
 
 # Now when running this you should get the following error:
 #     lessc: no input files
 lessc
+{% endhighlight %}
+
+You may want to install `n` to keep your node install up to date. Here is an example of downloading and using n.
+
+{% highlight bash %}
+# Download and install n
+sudo npm install n -g
+
+# Update to the latest version of node
+# May take some time but so easy
+sudo n latest
+
+# You can even change to specific versions
+# If that version is not installed then it will download and build it first
+sudo n 0.6.0
+
+# To check what installs of node you have available, simply run the program
+n
 {% endhighlight %}
