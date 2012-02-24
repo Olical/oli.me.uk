@@ -99,3 +99,21 @@ sudo n 0.6.0
 # To check what installs of node you have available, simply run the program
 n
 {% endhighlight %}
+
+## Downloading less.js
+
+Okay, so now you have everything set up we can get cracking. It may seem like a lot to install, but it is so worth it. The above programs will make working with other things easier too. They are all great tools to have ready.
+
+If you have a git project set up already, then great. If not you will want to set one up. If you do not know how then [this should help](http://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide#320140). Once you have your repo set up and a terminal in that directory, we can download less.js as a submodule. Please edit the path at the end of this command to point at your desired download directory.
+
+{% highlight bash %}
+git submodule add git://github.com/cloudhead/less.js.git ./assets/javascript/less.js/
+{% endhighlight %}
+
+Now less.js's repo will be in `./assets/javascript/less.js/`. Let's load that into our page with the following script tag. You should place this just before the closing head tag (`</head>`) after any included styles.
+
+{% highlight html %}
+<script type='text/javascript' src='assets/javascript/less.js/dist/less-1.2.2.min.js'></script>
+{% endhighlight %}
+
+You will have to check inside the dist folder for a later version. If there is one then load that instead.
