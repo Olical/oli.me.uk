@@ -169,3 +169,7 @@ You do not include LESS in the normal way, you have to use a special `rel` attri
 {% endhighlight %}
 
 Notice the `rel` attribute of this link tag is `stylesheet/less`. This allows less.js to identify, load and compile your LESS. If you open up FireBug / some form of console you will be able to see debug information produced by less.js. Such as how long it took to compile.
+
+## Compiling in the terminal
+
+You should only compile LESS in the browser during the development stage.
