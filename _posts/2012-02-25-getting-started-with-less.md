@@ -17,6 +17,7 @@ Before you can actually use LESS you need a few things. Sure you can get started
 
  * [Git](#git)
  * [Node.js](#nodejs)
+ * [NPM](#npm)
 
 ### Git
 
@@ -60,3 +61,22 @@ sudo make install
 {% endhighlight %}
 
 If you just can't get this to work, then try the installers on the node site. I do not recommend them, they may cause trouble in the long run. But they should work okay as a quick fix.
+
+### NPM
+
+[NPM](http://npmjs.org/) stands for node package manager. It allows you to install packages written in JavaScript to be run with node incredibly easily. I believe NPM now comes built into node. To check if you have it installed simply type `npm` into your terminal. If you get an error then here is how to install it.
+
+{% highlight bash %}
+curl http://npmjs.org/install.sh | sudo sh
+{% endhighlight %}
+
+That line is taken from the NPM website. It should install NPM onto your system. Once done you are going to want to install a package. We will be installing `less` via NPM. Less provides a program called `lessc` which allows you to compile your LESS to CSS on the command line.
+
+{% highlight bash %}
+# Install the less package
+sudo npm install less -g
+
+# Now when running this you should get the following error:
+#     lessc: no input files
+lessc
+{% endhighlight %}
