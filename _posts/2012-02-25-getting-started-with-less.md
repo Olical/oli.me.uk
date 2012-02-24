@@ -110,7 +110,7 @@ If you have a git project set up already, then great. If not you will want to se
 git submodule add git://github.com/cloudhead/less.js.git ./assets/javascript/less.js/
 {% endhighlight %}
 
-Now less.js's repo will be in `./assets/javascript/less.js/`. Let's load that into our page with the following script tag. You should place this just before the closing head tag (`</head>`) after any included styles.
+Alternatively you can visit [the GitHub repository for less.js](https://github.com/cloudhead/less.js) and download the project in a zip. I would recommend using git but it is up to you. Now less.js's repo will be in `./assets/javascript/less.js/`. Let's load that into our page with the following script tag. You should place this just before the closing head tag (`</head>`) after any included styles.
 
 {% highlight html %}
 <script type='text/javascript' src='assets/javascript/less.js/dist/less-1.2.2.min.js'></script>
