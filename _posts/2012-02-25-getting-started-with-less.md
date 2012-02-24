@@ -117,3 +117,39 @@ Now less.js's repo will be in `./assets/javascript/less.js/`. Let's load that in
 {% endhighlight %}
 
 You will have to check inside the dist folder for a later version. If there is one then load that instead.
+
+## Writing some basic LESS
+
+This tutorial is about using, compiling and understanding the concept of LESS, not the syntax it's self. So I will show you some of the basics, but for the rest you will want to use [the documentationn](http://lesscss.org/). LESS allows you to do a lot the you wish you could have in CSS, these include variables, functions / mixins and selector nesting. Here are a few examples of using these.
+
+{% highlight scss %}
+// You can use this style of comment, no need for /* ... */
+// You can nest selectors like this
+
+div.content {
+	p {
+		a {
+			color: #FF0000;
+		}
+	}
+}
+
+// Which would compile to: div.content p a { color: #FF0000 }
+// You can mix and match with normal CSS, you don't /need/ to nest selectors
+// For example
+
+div.content p {
+	a {
+		color: #FF0000
+	}
+}
+
+// You can also use variables!
+// Like this:
+
+@color-red: #FF0000;
+
+div.content p a {
+	color: @color-red;
+}
+{% endhighlight %}
