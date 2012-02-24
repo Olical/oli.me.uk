@@ -80,6 +80,9 @@ sudo npm install less -g
 # Now when running this you should get the following error:
 #     lessc: no input files
 lessc
+
+# You will also want to install clean-css to minify your CSS
+sudo npm install clean-css -g
 {% endhighlight %}
 
 You may want to install `n` to keep your node install up to date. Here is an example of downloading and using n.
@@ -172,4 +175,23 @@ Notice the `rel` attribute of this link tag is `stylesheet/less`. This allows le
 
 ## Compiling in the terminal
 
-You should only compile LESS in the browser during the development stage.
+You should only compile LESS in the browser during the development stage. When you are done and you are uploading to your FTP server for example you should compile your LESS to CSS and load that instead. To compile your LESS you can use the following line. Remember to point to the correct files!
+
+{% highlight bash %}
+lessc assets/less/main.less | cleancss -o assets/css/styles.min.css
+{% endhighlight %}
+
+This will compile your LESS with `lessc` and then minify it with `cleancss`. Now all we have to do is swap to the CSS version on our production server. So we can remove this.
+
+{% highlight html %}
+<link rel='stylesheet/less' type='text/css' href='assets/less/main.less'>
+<script type='text/javascript' src='assets/javascript/less.js/dist/less-1.2.2.min.js'></script>
+{% endhighlight %}
+
+And replace it with this.
+
+{% highlight html %}
+<link rel='stylesheet' type='text/css' href='assets/css/styles.min.css'>
+{% endhighlight %}
+
+Wow, this post ended up a lot longer than I expected. I hope you have enjoyed it. Please feel free to ask questions in the comments below.
