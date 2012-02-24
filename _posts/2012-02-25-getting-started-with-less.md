@@ -152,4 +152,20 @@ div.content p {
 div.content p a {
 	color: @color-red;
 }
+
+// You can even import other LESS files
+// If the file ends with the .less extension all you need is something like this
+
+@import 'someDirectory/myStyles';
+@import 'someMoreStyles';
 {% endhighlight %}
+
+## Including your stylesheet
+
+You do not include LESS in the normal way, you have to use a special `rel` attribute. So place the following line **above** your include of less.js and change the path of the file to match your layout.
+
+{% highlight html %}
+<link rel='stylesheet/less' type='text/css' href='assets/less/main.less'>
+{% endhighlight %}
+
+Notice the `rel` attribute of this link tag is `stylesheet/less`. This allows less.js to identify, load and compile your LESS. If you open up FireBug / some form of console you will be able to see debug information produced by less.js. Such as how long it took to compile.
