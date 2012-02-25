@@ -91,8 +91,9 @@ You may want to install `n` to keep your node install up to date. Here is an exa
 # Download and install n
 sudo npm install n -g
 
-# Update to the latest version of node
+# Update to the latest version of node at any time
 # May take some time but so easy
+# You should not have to if you have just installed
 sudo n latest
 
 # You can even change to specific versions
@@ -110,7 +111,12 @@ Okay, so now you have everything set up we can get cracking. It may seem like a 
 If you have a git project set up already, then great. If not you will want to set one up. If you do not know how then [this should help](http://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide#320140). Once you have your repo set up and a terminal in that directory, we can download less.js as a submodule. Please edit the path at the end of this command to point at your desired download directory.
 
 {% highlight bash %}
+# Download less.js in a submodule
 git submodule add git://github.com/cloudhead/less.js.git ./assets/javascript/less.js/
+
+# Commit our changes
+git add .
+git commit -m "Added less.js as a submodule."
 {% endhighlight %}
 
 Alternatively you can visit [the GitHub repository for less.js](https://github.com/cloudhead/less.js) and download the project in a zip. I would recommend using git but it is up to you. Now less.js's repo will be in `./assets/javascript/less.js/`. Let's load that into our page with the following script tag. You should place this just before the closing head tag (`</head>`) after any included styles.
@@ -123,7 +129,7 @@ You will have to check inside the dist folder for a later version. If there is o
 
 ## Writing some basic LESS
 
-This tutorial is about using, compiling and understanding the concept of LESS, not the syntax it's self. So I will show you some of the basics, but for the rest you will want to use [the documentationn](http://lesscss.org/). LESS allows you to do a lot the you wish you could have in CSS, these include variables, functions / mixins and selector nesting. Here are a few examples of using these.
+This tutorial is about using, compiling and understanding the concept of LESS, not the syntax it's self. So I will show you some of the basics, but for the rest you will want to use [the documentationn](http://lesscss.org/). LESS allows you to do a lot that you wish you could do in CSS, these include variables, functions / mixins and selector nesting. Here are a few examples of using these.
 
 {% highlight scss %}
 // You can use this style of comment, no need for /* ... */
