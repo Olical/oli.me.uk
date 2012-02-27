@@ -18,28 +18,33 @@ title: Sliced text with CSS - complete
 		position: absolute;
 	}
 	
+	div.slice div.left {
+		top: 5px;
+		left: 55px;
+		
+		transform: rotate(-30deg);
+	}
+	
 	div.slice div.right {
 		top: 25px;
 		left: 40px;
 	}
 	
-	div.slice div.left {
-		transform: rotate(-30deg);
-		top: 5px;
-		left: 55px;
-	}
-	
 	div.slice div.line {
-		border-right: 1px solid #444444;
 		overflow: hidden;
-		width: 100px;
-		height: 110px;
-		transform: rotate(30deg);
-		background-color: #FFFFFF;
 		z-index: 10;
 		position: absolute;
+		
+		background-color: #FFFFFF;
+		border-right: 1px solid #444444;
+		
+		width: 100px;
+		height: 110px;
+		
 		top: -40px;
 		left: 0;
+		
+		transform: rotate(30deg);
 	}
 </style>
 
