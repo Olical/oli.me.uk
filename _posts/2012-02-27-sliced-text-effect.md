@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sliced text effect
-date: 2012-02-27 22:00:00
+date: 2012-02-27 22:05:00
 tags:
  - css
  - html
