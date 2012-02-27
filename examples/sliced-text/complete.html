@@ -1,0 +1,61 @@
+---
+layout: example
+title: Sliced text with CSS - complete
+---
+
+<style type='text/css'>
+	html {
+		background-color: #FFFFFF;
+	}
+	
+	div.slice {
+		position: relative;
+		width: 200px;
+		margin: 50px auto;
+	}
+	
+	div.slice div.left, div.slice div.right {
+		position: absolute;
+	}
+	
+	div.slice div.left {
+		top: 5px;
+		left: 55px;
+		
+		transform: rotate(-30deg);
+	}
+	
+	div.slice div.right {
+		top: 25px;
+		left: 40px;
+	}
+	
+	div.slice div.line {
+		overflow: hidden;
+		z-index: 10;
+		position: absolute;
+		
+		background-color: #FFFFFF;
+		border-right: 1px solid #444444;
+		
+		width: 100px;
+		height: 110px;
+		
+		top: -40px;
+		left: 0;
+		
+		transform: rotate(30deg);
+	}
+</style>
+
+<div class='slice'>
+	<div class='line'>
+		<div class='left'>
+			<p>Laceration</p>
+		</div>
+	</div>
+	
+	<div class='right'>
+		<p>Laceration</p>
+	</div>
+</div>
