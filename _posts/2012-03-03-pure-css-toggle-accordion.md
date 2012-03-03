@@ -15,7 +15,7 @@ I admit, because of using newer CSS, namely the `:checked` pseudo selector, you 
 
 ## Markup
 
-Now the HTML for this particular accordion is a little more complicated that some. That is because we are utilizing radio buttons to perform the toggle on click action. But do not fear, it only means one extra element that is actually set to `display: none`.
+Now the HTML for this particular accordion is a little more complicated than some. That is because we are utilizing radio buttons to perform the toggle on click action. But do not fear, it only means one extra element that is actually set to `display: none`.
 
 {% highlight html %}
 <ul class='accordion'>
@@ -37,9 +37,9 @@ Now the HTML for this particular accordion is a little more complicated that som
 </ul>
 {% endhighlight %}
 
-I have only added two here, but you can add as many as you require. As you can see, we have a simple unordered list with a class applied to it (`<ul class='accordion'>`). Each list item contains a label, input and div. The label is where you store your title and the div is where you put your content. You can style all of this however you want. Just adapt my CSS that I will show you in a second.
+I have only added two content panes here, but you can add as many as you require. As you can see, we have a simple unordered list with a class applied to it (`<ul class='accordion'>`). Each list item contains a label, input and div. The label is where you store your title and the div is where you put your content. You can style all of this however you want. Just adapt my CSS that I will show you in a second.
 
-When adding more items you must remember to update the `for` attribute on the label and the `id` of the radio input. Otherwise you will click one and six will show. Other than that you can just copy and paste to your hearts content.
+When adding more items you must remember to update the `for` attribute on the label and the `id` of the radio input. Otherwise you will click one and six will show. You can also specify a content pane to be open by default by adding `checked='checked'` to its radio button, just like I have done in the HTML above. Other than that you can just copy and paste to your hearts content.
 
 ## CSS
 
