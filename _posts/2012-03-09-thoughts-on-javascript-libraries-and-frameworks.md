@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Thoughts on JavaScript libraries and frameworks
-date: 2012-03-09 00:00:00
+date: 2012-03-09 22:23:00
 tags:
  - javascript
 ---
