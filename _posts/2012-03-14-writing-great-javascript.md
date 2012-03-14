@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Writing great JavaScript
-date: 2012-03-14 21:58:00
+date: 2012-03-14 22:00:00
 tags:
  - javascript
  - jshint
