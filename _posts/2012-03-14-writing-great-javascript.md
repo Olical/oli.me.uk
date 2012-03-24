@@ -39,7 +39,7 @@ Now your color string has been replaced by a libraries object. Hello bugs and ti
 		color = selected;
 	});
 	
-	colorPicker.addEvent('save', function() {
+	userSettings.addEvent('save', function() {
 		this.saveSetting('profile-background', color);
 	});
 	
