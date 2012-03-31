@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Writing a modular frontend
-date: 2012-03-31 00:00:00
+date: 2012-03-31 11:36:00
 tags:
  - javascript
  - amd
