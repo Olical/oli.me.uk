@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fun with negative margins
-date: 2012-05-07 00:00:00
+date: 2012-05-07 01:00:00
 tags:
  - css
 ---
@@ -13,6 +13,53 @@ Ever wanted to overlay elements? You can create great effects and produce a real
 You may be wondering what on earth a negative margin looks like. Well take the new look of a Facebook profile for example. You see the way the smaller image pushes up into the larger one? That is the kind of effect you would be aiming for with a negative margin. Although I think Facebook are using a slightly different method. Saying that, I can see that they do use a negative margin, just not how I would have.
 
 So you use it when you want an element to either pull it's self upwards or drag it's self downwards over other elements. I will show you how to accomplish something similar to the Facebook header but full width which makes for a great blog post style.
+
+To start you off, here is my example code.
+
+### HTML
+
+{% highlight html %}
+<div class='container'>
+    <img src='http://placekitten.com/400/220' class='banner'>
+    <div class='overlay'>
+        <div class='content'>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        </div>
+    </div>
+</div>
+{% endhighlight %}
+
+### CSS
+
+{% highlight css %}
+body {
+    background-color: #CCCCCC;
+}
+
+.container {
+    width: 400px;
+    margin: 30px auto;
+}
+
+.overlay {
+    width: 90%;
+    background: #FFFFFF;
+    background: rgba(255, 255, 255, 0.7);
+    margin: 0 auto;
+    margin-top: -100px;
+    position: relative;
+    border-radius: 8px;
+}
+
+.banner {
+    border-radius: 6px;
+}
+
+.content {
+    padding: 12px;
+}
+{% endhighlight %}
 
 ### A note on the delay
 
