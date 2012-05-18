@@ -91,7 +91,7 @@ body {
 
 This may seem a little daunting. That is mainly because this is a fancy decorated version. Here is the stripped down version with only the code you need. You should easily be able to work out what is going on from the comments.
 
-### HTML
+### HTML (simple)
 
 {% highlight html %}
 <!-- This is our banner the content will pull up over -->
@@ -103,7 +103,7 @@ This may seem a little daunting. That is mainly because this is a fancy decorate
 </div>
 {% endhighlight %}
 
-### CSS
+### CSS (simple)
 
 {% highlight css %}
 .overlay {
