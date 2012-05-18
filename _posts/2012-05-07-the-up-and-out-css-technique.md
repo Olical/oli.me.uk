@@ -4,6 +4,8 @@ title: Fun with negative margins
 date: 2012-05-07 01:00:00
 tags:
  - css
+ - html
+ - margins
 ---
 
 Ever wanted to overlay elements? You can create great effects and produce a really engaging site by simply making `div`s overlap slightly. But sometimes making elements lay on top of each other is harder than you would think. One of the biggest problems people have when overlaying elements on top of each other seems to be z-index issues. Luckily I am here to show you the perfect way to overlay elements with no z-index woes.
@@ -82,8 +84,43 @@ body {
 
 .content {
     padding: 12px;
-}i
+}
 {% endhighlight %}
+
+## Eh, what?
+
+This may seem a little daunting. That is mainly because this is a fancy decorated version. Here is the stripped down version with only the code you need. You should easily be able to work out what is going on from the comments.
+
+### HTML
+
+{% highlight html %}
+<!-- This is our banner the content will pull up over -->
+<img src='http://placekitten.com/400/220'>
+
+<!-- This is the div that will pull up over the banner -->
+<div class='overlay'>
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+</div>
+{% endhighlight %}
+
+### CSS
+
+{% highlight css %}
+.overlay {
+    /* Pull the content up over the banner */
+    margin-top: -100px;
+    
+    /* Using this will make sure that it goes over the element, not under */
+    /* This is the magic line that fixes most z-index issues */
+    position: relative;
+}
+{% endhighlight %}
+
+See, pretty simple when you tear it down. So all we are doing is adding a negative top margin and setting the position to relative. The negative margin pulls the element up and the relative position makes sure the overlay ends up on top of the banner.
+
+The exact same theory applies to downwards or sideways margins. You can pull anything over anything to improve the visual flow of your pages. Play about with it and overlay items in creative ways. Although I doubt anything will be better than text laid over a kitten.
+
+<iframe height='470' class='example' src='/examples/negative-margins/kitten.html'>.</iframe>
 
 ### A note on the delay
 
