@@ -14,7 +14,7 @@ You may be wondering what on earth a negative margin looks like. Well take the n
 
 So you use it when you want an element to either pull it's self upwards or drag it's self downwards over other elements. I will show you how to accomplish something similar to the Facebook header but full width which makes for a great blog post style.
 
-To start you off, here is my example code.
+To start you off, here is my example code. You can also [have a play with it on jsFiddle](http://jsfiddle.net/Wolfy87/E48MA/).
 
 ### HTML
 
@@ -82,7 +82,7 @@ body {
 
 .content {
     padding: 12px;
-}
+}i
 {% endhighlight %}
 
 ### A note on the delay
