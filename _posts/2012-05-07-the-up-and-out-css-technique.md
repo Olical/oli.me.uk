@@ -19,9 +19,17 @@ To start you off, here is my example code.
 ### HTML
 
 {% highlight html %}
+<!-- Used for centering my example -->
 <div class='container'>
+    <!-- This is our banner the content will pull up over -->
+    <!-- The class isn't even required, just using it for decoration -->
     <img src='http://placekitten.com/400/220' class='banner'>
+    
+    <!-- This is the div that will pull up over the banner -->
+    <!-- It's class also adds some decoration -->
     <div class='overlay'>
+        <!-- This content div just adds padding for the text -->
+        <!-- We add padding to an inner div so as not to stretch the parent -->
         <div class='content'>
             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
             <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
@@ -33,25 +41,41 @@ To start you off, here is my example code.
 ### CSS
 
 {% highlight css %}
+/* Give the page a nicer background */
 body {
     background-color: #CCCCCC;
 }
 
+/* Center my example and push it off the top of the page */
 .container {
     width: 400px;
     margin: 30px auto;
 }
 
+/* Pull the overlay up over the banner */
 .overlay {
+    /* Don't take up the full width */
     width: 90%;
+    
+    /* Give the content a see thru white background, default to solid white in old browsers */
     background: #FFFFFF;
     background: rgba(255, 255, 255, 0.7);
+    
+    /* Center the content */
     margin: 0 auto;
+    
+    /* Pull the content up over the banner */
     margin-top: -100px;
+    
+    /* Using this will make sure that it goes over the element, not under */
+    /* This is the magic line that fixes most z-index issues */
     position: relative;
+    
+    /* More pointless pretty code */
     border-radius: 8px;
 }
 
+/* Make the content look pretty */
 .banner {
     border-radius: 6px;
 }
