@@ -4,12 +4,12 @@
 [submodule "assets/less/more"]
 	path = assets/less/more
 	url = git://github.com/Wolfy87/more.git
-[submodule "assets/css/normalize.css"]
-	path = assets/css/normalize.css
-	url = git://github.com/jonathantneal/normalize.css.git
 [submodule "assets/javascript/prefixfree"]
 	path = assets/javascript/prefixfree
 	url = git://github.com/LeaVerou/prefixfree.git
 [submodule "assets/javascript/string_score"]
 	path = assets/javascript/string_score
 	url = git://github.com/joshaven/string_score.git
+[submodule "assets/css/normalize.css"]
+	path = assets/css/normalize.css
+	url = git://github.com/necolas/normalize.css.git
