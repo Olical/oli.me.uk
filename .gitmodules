@@ -10,6 +10,6 @@
 [submodule "assets/javascript/string_score"]
 	path = assets/javascript/string_score
 	url = git://github.com/joshaven/string_score.git
-[submodule "assets/css/normalize.css"]
-	path = assets/css/normalize.css
+[submodule "assets/css/normalize"]
+	path = assets/css/normalize
 	url = git://github.com/necolas/normalize.css.git
