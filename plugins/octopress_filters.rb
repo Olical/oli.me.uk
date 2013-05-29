@@ -3,7 +3,6 @@ require './plugins/backtick_code_block'
 require './plugins/post_filters'
 require './plugins/raw'
 require './plugins/date'
-require 'rubypants'
 
 module OctopressFilters
   include BacktickCodeBlock
@@ -15,8 +14,7 @@ module OctopressFilters
     end
   end
   def post_filter(input)
-    input = unwrap(input)
-    RubyPants.new(input).to_html
+    unwrap(input)
   end
 end
 
