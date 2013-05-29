@@ -27,7 +27,7 @@ Everyone does it. By the end of a project you have a thousand line CSS file with
 
 To create this modular CSS I recommend extensive use of the `@import` statement. Usually I would cry "*burn the heretic!*" if I heard someone recommend that, but then I found out that [the RequireJS optimizer can also be used on CSS](http://requirejs.org/docs/optimization.html#onecss). So while in development you can use `@import` to make managing your CSS easier. and just before you upload you can run it through `r.js` to concatenate and minify your CSS. Here's the directory structure that I am now using which is specified by OOCSS.
 
-{% highlight text %}
+{% codeblock %}
 \-yourplugin/ {plugin-root}  
 +-yourplugin.css {essential CSS}  
 +-yourplugin_debug.css {CSS for debugging} 
@@ -40,17 +40,17 @@ To create this modular CSS I recommend extensive use of the `@import` statement.
   +-\ flow/ {skin-root}  
     +-flow_skin.css  
     +-img/  
-{% endhighlight %}
+{% endcodeblock %}
 
 I also create a file called `loader.css` this just contains the core import statements. Then in turn the other files cascade down importing anything they need to function. Once you have written your CSS using the format above then you can flatten it down to one file like so.
 
-{% highlight bash %}
+{% codeblock lang:bash %}
 node r.js -o cssIn=assets/css/loader.css out=styles.css
 
 # Then you can minify it too if you want
 # cleancss is a node module for minifying css
 cleancss -o styles.min.css styles.css
-{% endhighlight %}
+{% endcodeblock %}
 
 Not too bad eh?
 

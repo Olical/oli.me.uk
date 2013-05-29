@@ -14,7 +14,7 @@ While writing this I realized that everything I was using had to be accessed in 
 
 The other two methods are CommonJS modules and AMD. To define and pass back your class with AMD you would use the following.
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 // Your classes code
 define(function() {
 	function SomeClass() {
@@ -28,11 +28,11 @@ define(function() {
 define(['SomeClass'], function(SomeClass) {
 	var s = new SomeClass();
 });
-{% endhighlight %}
+{% endcodeblock %}
 
 That example involves no global object pollution but still gets the job done and is my favorite method by far. A similar effect can be seen with CommonJS modules which are used for almost everything based on node.js.
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 // Your classes code
 function SomeClass() {
 	// ...
@@ -43,11 +43,11 @@ module.exports = SomeClass;
 // The code that requires it
 var SomeClass = require('SomeClass');
 var s = new SomeClass();
-{% endhighlight %}
+{% endcodeblock %}
 
 CommonJS modules may seem a bit simpler but I still think AMD is better for browsers due to its ability to load scripts in parallel. CommonJS is more suited to things like node.js in my opinion. Now what if you want your script to work everywhere and be truly portable. You are going to need to export to all three places. The global object, AMD and CommonJS. In the following example I am using the function wrapper discussed in [my previous article](/2012/03/14/writing-great-javascript.html).
 
-{% highlight javascript %}
+{% codeblock lang:javascript %}
 ;(function(exports) {
 	function SomeClass() {
 		// ...
@@ -69,6 +69,6 @@ CommonJS modules may seem a bit simpler but I still think AMD is better for brow
 		exports.SomeClass = SomeClass;
 	}
 }(this));
-{% endhighlight %}
+{% endcodeblock %}
 
 With this at the bottom of your script it can be loaded in anyway your user desires. If you want you could take the global object definition (the last one) out of the else statement so that even if something like RequireJS was on the page you could still access it through the global object.

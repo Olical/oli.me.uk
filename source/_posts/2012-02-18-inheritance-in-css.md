@@ -14,7 +14,7 @@ So, what is it, and how does it work. Well the concept is fairly simple, you hav
 
 First off we need the core styles, this is just the layout and default styles for your element. So any paddings, margins, borders and font styles. Here is what I am going to use.
 
-{% highlight css %}
+{% codeblock lang:css %}
 .button {
 	margin: 10px;
 	padding: 2px 10px;
@@ -28,7 +28,7 @@ First off we need the core styles, this is just the layout and default styles fo
 	border-color: #777777;
 	background-color: #999999;
 }
-{% endhighlight %}
+{% endcodeblock %}
 
 I have specified the border width and style separate to the color. You do not need to. I have only done this for clarity. Now you can see the two properties we will override with our specific classes. Although you can add as many as you want.
 
@@ -38,18 +38,18 @@ So, what does this look like? Well, it is very plain, but here it is.
 
 Now lets add some color to it. We do not edit the original CSS to achieve this. Instead we write a new class that overrides the original styles. So, lets write that extension class.
 
-{% highlight css %}
+{% codeblock lang:css %}
 .green.button {
 	border-color: #4C724C;
 	background-color: #669966;
 }
-{% endhighlight %}
+{% endcodeblock %}
 
 Easy to read and very powerful. You can see that and element with a class of `green button` will now have the layout of a button and a green theme. This can be applied to any element. An anchor for example.
 
-{% highlight html %}
+{% codeblock lang:html %}
 <a href='#' class='green button'>This is a green button</a>
-{% endhighlight %}
+{% endcodeblock %}
 
 We end up with something that looks like this.
 
@@ -59,7 +59,7 @@ We end up with something that looks like this.
 
 You can amazingly make this even simpler. My favorite way to do this is by using a mixin with LESS. Here is the green styling again but instead using a mixin. This method means you could have as many button styles as you want and manage them easily.
 
-{% highlight text %}
+{% codeblock lang:sass %}
 .button-theme(@color) {
 	border-color: darken(@color, 10%);
 	background-color: @color;
@@ -68,6 +68,6 @@ You can amazingly make this even simpler. My favorite way to do this is by using
 .green.button {
 	.button-theme(#669966);
 }
-{% endhighlight %}
+{% endcodeblock %}
 
 As you can see, I am only specifying one color here. I let LESS do the hard work and calculate the shades of my base color. You can apply these techniques to almost everything in CSS. It means you have to write less code but it is actually so much easier to maintain.

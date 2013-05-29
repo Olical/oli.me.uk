@@ -13,7 +13,7 @@ I am a huge fan of Terry Pratchett's discworld books. At one point in the series
 
 I am afraid the technique is a little manual so it requires some playing about with pixels. So this is not really feasible for variable length text. Unless you can work something out that I could not of course. Before we look at the CSS you will want to get familiar with the markup. Otherwise you will not understand the counter rotations among other things.
 
-{% highlight html %}
+{% codeblock lang:html %}
 <div class='slice'>
 	<div class='line'>
 		<div class='left'>
@@ -25,11 +25,11 @@ I am afraid the technique is a little manual so it requires some playing about w
 		<p>Laceration</p>
 	</div>
 </div>
-{% endhighlight %}
+{% endcodeblock %}
 
 The base CSS is pretty simple. It just involves positioning the elements correctly. The left and top values are the ones you need to tweak to get your text in the right place. This can be tricky because you need two copies of your text and you must adjust both separately.
 
-{% highlight css %}
+{% codeblock lang:css %}
 div.slice {
 	position: relative;
 }
@@ -49,11 +49,11 @@ div.slice div.right {
 	top: 25px;
 	left: 40px;
 }
-{% endhighlight %}
+{% endcodeblock %}
 
 The rotation of `-30deg` in the code above is to counteract the rotation of the element that clips the text (`div.line`). The CSS for the clipping element is a little more complicated. But all you have to worry about are the lower properties. These involve more top / left positions and some color choices.
 
-{% highlight css %}
+{% codeblock lang:css %}
 div.slice div.line {
 	overflow: hidden;
 	z-index: 10;
@@ -70,6 +70,6 @@ div.slice div.line {
 	
 	transform: rotate(30deg);
 }
-{% endhighlight %}
+{% endcodeblock %}
 
 So all you have to do is set up your text, position it in an inspector by adjusting the left / top values and color the background. You can also style your border with the last chunk of CSS. A live demo of this is available on [jsFiddle](http://jsfiddle.net/Wolfy87/desCn/). Feel free to have a play around with it. And please leave a comment with any thoughts you may have.

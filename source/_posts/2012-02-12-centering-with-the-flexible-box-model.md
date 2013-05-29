@@ -16,7 +16,7 @@ But it does more than just center any way you want. It also allows you to center
 
 Please bear in mind that I am using [prefixfree](https://github.com/LeaVerou/prefixfree) on this site, so I don't have to worry about vendor prefixes. However, **you do**. Fear not, if you do not want to include prefixfree in your code you can run your flexbox CSS through [prefixr](http://prefixr.com/). It is the web app equivalent of prefixfree. Let's get started then&hellip;
 
-{% highlight css %}
+{% codeblock lang:css %}
 div.center {
 	/* This is used to center the parent */
 	/* Apparently display: box; stops margin: 0 auto; */
@@ -42,17 +42,17 @@ div.parent div {
 	height: 50px;
 	background-color: #AA3333;
 }
-{% endhighlight %}
+{% endcodeblock %}
 
 I think we should begin wit~ wait what, **that's it?!** Whoa. It only takes that code between the comments. The rest is decorative. It may seem ridiculously simple, but that is all you need to center that elements child vertically and horizontally. `mind = 'blown';`. Let's take a gander at the hugely complicated HTML that compliments this brain meltingly difficult CSS.
 
-{% highlight html %}
+{% codeblock lang:html %}
 <div class='center'>
 	<div class='parent'>
 		<div></div>
 	</div>
 </div>
-{% endhighlight %}
+{% endcodeblock %}
 
 Yeah. I don't hear any screaming developers. Easy as &pi;. Here is a working example.
 
@@ -64,7 +64,7 @@ Okay, so maybe it is not the most widely supported feature out there. There's a 
 
 So here is my favourite way to vertically center an element which should work in pretty much every browser you need it to. Lets look at the CSS first.
 
-{% highlight css %}
+{% codeblock lang:css %}
 html, body {
 	/* This allows us to center in the height of the browser. */
 	height: 100%;
@@ -84,16 +84,16 @@ div.to-center {
 	margin: 0 auto;
 	background-color: #AA3333;
 }
-{% endhighlight %}
+{% endcodeblock %}
 
 Sadly, we have to specify a height. It is a little easier if you are using LESS because you can work out the height dynamically. Still, not ideal. So we are using `div.aligner` to push our element (`div.to-center`) down to the middle of the page. Our centered element is using the beautiful `margin: 0 auto;` trick to center horizontally.
 
 Now for the HTML, it is very simple but still. As you may have guessed from the CSS, it simply involves two `<div>`'s next to each other. Although they can be any element you like to be honest.
 
-{% highlight html %}
+{% codeblock lang:html %}
 <div class='aligner'></div>
 <div class='to-center'></div>
-{% endhighlight %}
+{% endcodeblock %}
 
 And here is the cross-browser method in action.
 
