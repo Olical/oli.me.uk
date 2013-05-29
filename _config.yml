@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://oli.me.uk/
+url: http://oli.me.uk
 title: Oliver.prototype.blog
 subtitle: JavaScript all the way down.
 author: Oliver Caldwell
@@ -27,12 +27,12 @@ email:
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
 root: /
-permalink: /blog/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title.html
 source: source
 destination: public
 plugins: plugins
-code_dir: downloads/code
-category_dir: blog/categories
+code_dir: code
+category_dir: categories
 markdown: rdiscount
 rdiscount:
   extensions:
@@ -91,7 +91,7 @@ delicious_count: 3
 
 # Disqus Comments
 disqus_short_name: olimeuk
-disqus_show_comment_count: false
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id: UA-29131116-1
