@@ -4,10 +4,10 @@
 
 url: http://oli.me.uk
 title: Oliver.prototype.blog
-subtitle: JavaScript all the way down.
+subtitle: A place to share my knowledge and escapades in the world of web development.
 author: Oliver Caldwell
 simple_search: http://google.com/search
-description: A place to share my knowledge and escapades in the world of web development.
+description:
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -42,7 +42,7 @@ rdiscount:
 pygments: false # default python pygments have been replaced by pygments.rb
 
 paginate: 10          # Posts per page on the blog index
-pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
+pagination_dir:       # Directory base for pagination URLs eg. /blog/page/2/
 recent_posts: 5       # Posts in the sidebar Recent Posts section
 excerpt_link: "Read on &rarr;"  # "Continue reading" link text at the bottom of excerpted articles
 
