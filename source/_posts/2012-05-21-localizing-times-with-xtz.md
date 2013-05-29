@@ -13,6 +13,8 @@ This conversion is incredibly useful for things such as gaming clan website wher
 
 You can learn more about it in the [GitHub repository](https://github.com/Wolfy87/xtz) or from [this fiddle](http://jsfiddle.net/Wolfy87/qgDLY/). Or you can carry on reading to see a quick example.
 
+<!-- more -->
+
 ## An example
 
 So here is a really simple example as to how you use it. First off you start out with your dates within elements. I am using span tags within a paragraph because that is probably one of the most common places.

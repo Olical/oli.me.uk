@@ -13,6 +13,8 @@ It may be a bold statement, but I believe that modularity is the way forward. By
 
 The thing that got me thinking about modules was looking at [Python](http://www.python.org/), more specifically [Django](https://www.djangoproject.com/) with [Mezzanine](http://mezzanine.jupo.org/), and just realizing how nice it is having everything loosely coupled and easily reusable. So I set about finding a way to write modular JavaScript **and** CSS.
 
+<!-- more -->
+
 ## Modular JavaScript
 
 I have already talked about this before but I can't stress enough how good it is. Using [RequireJS](http://requirejs.org/) for loading and managing modules is just fantastic. Using it you can avoid polluting the global namespace and actually speed up your page. This is because your modules are loaded in parallel, not one after the other. So if you load [MooTools](http://mootools.net/) from [Google's CDN](https://code.google.com/apis/libraries/devguide.html) and the [Facebook JavaScript SDK](https://developers.facebook.com/docs/reference/javascript/) from the Facebook servers they will be loaded side by side along with your own modules, which can contain anything from single functions to huge classes.

@@ -10,6 +10,8 @@ There seems to be a lot of uncertainty about [how we should use JavaScript libra
 
 I personally do not get on too well with micro libraries, sure I have written a few, and [one of them](https://github.com/Wolfy87/EventEmitter) has become pretty popular, but if I had the choice I would still use a huge full on framework, namely MooTools. My reasoning behind this is the uniformed API and predictability of the code. You know that each component of the library will work with each other.
 
+<!-- more -->
+
 ## Is there a solution?
 
 So what is the ideal situation? I believe it lies in between a huge framework with a uniformed API and a collection of micro libraries each weighing in at under 3kb or so. Sadly, nothing like this exists at the moment. Although MooTools is almost there, you can use [its packager](https://github.com/kamicane/packager) to build your own custom version only using the files you need. Although it does feel a little awkward to use, you have to write YML headers in each file and run everything though the PHP based packager which has to be meticulously configured.

@@ -10,6 +10,8 @@ I have been working on [my EventEmitter class](https://github.com/Wolfy87/EventE
 
 In this post I will point out the main things I changed to get this kind of speed increase with the same functionality as the original. Well, roughly the same, I actually dropped some of the scoping stuff which can be achieved easily anyway. The old class was just getting a little bloated with settings and arguments.
 
+<!-- more -->
+
 ## Simplification
 
 Version 3 used a class to manage the attributes of an event called [`Event`](https://github.com/Wolfy87/EventEmitter/blob/v3.1.7/src/EventEmitter.js#L27-70). This gave me a huge amount of power but also a huge overhead. In version 4 I have completely removed this middle class and just pointed directly to a function for each listener.

@@ -12,6 +12,8 @@ When creating styles for elements such as buttons or text boxes in CSS there are
 
 So, what is it, and how does it work. Well the concept is fairly simple, you have a set of base styles for your element that may make it gray or just very plain. You then add extra classes that almost theme that element. As an example in this post I will be making a "themeable" button using inheritance.
 
+<!-- more -->
+
 First off we need the core styles, this is just the layout and default styles for your element. So any paddings, margins, borders and font styles. Here is what I am going to use.
 
 {% codeblock lang:css %}

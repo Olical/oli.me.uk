@@ -12,6 +12,8 @@ For those of you that have not heard of the flexible box model, brace yourselves
 
 But it does more than just center any way you want. It also allows you to center multiple elements and space them how you want. It may sound too good to be true, but it isn't (for once). It is just a little&hellip; new. So please keep that in mind when considering using it.
 
+<!-- more -->
+
 ## Get stuck in with flexbox
 
 Please bear in mind that I am using [prefixfree](https://github.com/LeaVerou/prefixfree) on this site, so I don't have to worry about vendor prefixes. However, **you do**. Fear not, if you do not want to include prefixfree in your code you can run your flexbox CSS through [prefixr](http://prefixr.com/). It is the web app equivalent of prefixfree. Let's get started then&hellip;

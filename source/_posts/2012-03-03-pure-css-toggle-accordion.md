@@ -13,6 +13,8 @@ CSS is brilliant. When written properly you can do so much with it. I believe th
 
 I admit, because of using newer CSS, namely the `:checked` pseudo selector, you alienate your older IE audience. But that can be fixed by including [Selectivizr](http://selectivizr.com/). So you have your increased performance and ease of use in newer browsers with a working version in IE. The first thing you will need is the HTML.
 
+<!-- more -->
+
 ## Markup
 
 Now the HTML for this particular accordion is a little more complicated than some. That is because we are utilizing radio buttons to perform the toggle on click action. But do not fear, it only means one extra element that is actually set to `display: none`.

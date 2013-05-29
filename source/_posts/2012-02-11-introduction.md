@@ -11,6 +11,8 @@ tags:
 
 Well, here we go. I have been working on this new blog on and off for about a week now. I thought I would start off with a post about some of the technology behind it.
 
+<!-- more -->
+
 ## Jekyll
 
 The first thing you will notice from checking out [the source](https://github.com/Wolfy87/wolfy87.github.com) will be that it is powered by [Jekyll](https://github.com/mojombo/jekyll). It is a blog aware static site generator that allows me to create templates, loops, posts and pages. A bit like WordPress, just more manual.

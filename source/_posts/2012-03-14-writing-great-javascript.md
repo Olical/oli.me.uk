@@ -11,6 +11,8 @@ I probably could have named this post something like "Writing clean, validating 
 
 So what's the point in this, why can't you just carry on writing JavaScript as you have been for ages. It works doesn't it? Well if you took the same opinion with a car and drove on 20 year old tires which will give out any day you are just asking for something to go horrifically wrong. Want an example? Here you go.
 
+<!-- more -->
+
 ## What could possibly go wrong
 
 You are writing something that manipulates color in some way. Maybe it is a color pallet tool, some form of UI selector element that allows you to set the background of your twitter style profile. You have some code like this in one of your scripts.

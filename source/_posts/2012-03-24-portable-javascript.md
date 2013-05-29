@@ -12,6 +12,8 @@ I gave in to AMD. I am currently using [RequireJS](http://requirejs.org/) on a p
 
 While writing this I realized that everything I was using had to be accessed in different ways. By this I mean MooTools is in the global object along with Kalendae and the `FB` object, but every AMD module I wrote was completely localized and passed it's self around without going into the global object. If you think about it there are three ways to get your lovely class back to they script that requires it. The most used is probably the global object, stick a value in there and everything can see it. I will let you draw your own conclusions about how good that is.
 
+<!-- more -->
+
 The other two methods are CommonJS modules and AMD. To define and pass back your class with AMD you would use the following.
 
 {% codeblock lang:javascript %}
