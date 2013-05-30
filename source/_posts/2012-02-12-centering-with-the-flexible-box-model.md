@@ -2,7 +2,7 @@
 layout: post
 title: Centering with the flexible box model
 date: 2012-02-12 11:30:00
-tags:
+categories:
  - css
  - flexbox
  - centering

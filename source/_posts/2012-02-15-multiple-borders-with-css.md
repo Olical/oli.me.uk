@@ -2,7 +2,7 @@
 layout: post
 title: Multiple borders with CSS
 date: 2012-02-15 21:00:00
-tags:
+categories:
  - css
  - borders
  - box-shadow

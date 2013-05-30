@@ -2,7 +2,7 @@
 layout: post
 title: Pure CSS toggle accordion
 date: 2012-03-03 11:45:00
-tags:
+categories:
  - css
  - html
  - accordion

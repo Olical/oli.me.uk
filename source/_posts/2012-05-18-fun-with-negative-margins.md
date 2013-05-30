@@ -2,7 +2,7 @@
 layout: post
 title: Fun with negative margins
 date: 2012-05-18 23:50:00
-tags:
+categories:
  - css
  - html
  - margins

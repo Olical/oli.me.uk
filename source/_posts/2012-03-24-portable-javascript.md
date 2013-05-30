@@ -2,7 +2,7 @@
 layout: post
 title: Portable JavaScript
 date: 2012-03-24 14:28:00
-tags:
+categories:
  - javascript
  - amd
  - commonjs

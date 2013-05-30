@@ -2,7 +2,7 @@
 layout: post
 title: Color in JavaScript
 date: 2012-02-22 22:05:00
-tags:
+categories:
  - javascript
  - color
 ---

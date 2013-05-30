@@ -2,7 +2,7 @@
 layout: post
 title: Getting started with LESS
 date: 2012-02-25 09:23:00
-tags:
+categories:
  - less
  - nodejs
  - git
