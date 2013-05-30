@@ -17,7 +17,7 @@ So what's the point in this, why can't you just carry on writing JavaScript as y
 
 You are writing something that manipulates color in some way. Maybe it is a color pallet tool, some form of UI selector element that allows you to set the background of your twitter style profile. You have some code like this in one of your scripts.
 
-{% codeblock lang:javascript %}
+```javascript
 var color = '#FFFFFF';
 
 colorPicker.addEvent('change', function(selected) {
@@ -27,13 +27,13 @@ colorPicker.addEvent('change', function(selected) {
 userSettings.addEvent('save', function() {
 	this.saveSetting('profile-background', color);
 });
-{% endcodeblock %}
+```
 
 So as you move your cursor across the UI element picking your color, the variable `color` is updated. When you hit save the contents of that variable are saved in some way, maybe by posting it back to your server in a call to `XMLHttpRequest` (that's `ActiveXObject('Microsoft.XMLHTTP')` to silly old Internet Explorer). Now you decide that you want more color capabilities at some point in your script. So you include a micro library called "color.js" which creates the global variable `color`. You can see where I am going with this.
 
 Now your color string has been replaced by a libraries object. Hello bugs and time you did not need to spend. Obviously you could fix this by renaming every occurrence of `color` or you could use a function wrapper to sandbox your code.
 
-{% codeblock lang:javascript %}
+```javascript
 ;(function() {
 	var color = '#FFFFFF';
 	
@@ -49,23 +49,23 @@ Now your color string has been replaced by a libraries object. Hello bugs and ti
 }());
 
 // typeof color === 'undefined'
-{% endcodeblock %}
+```
 
 And now the color variable is kept in the scope of our anonymous function, not the global object. Thus stopping the global `color` object conflicting with your string. You may be wondering what this mash of characters actually does, it is pretty simple actually. The initial semi-colon saves you from people that miss out the last semi colon in their script when you concatenate files. Without it you may end up with a situation in which you basically wrote this.
 
-{% codeblock lang:javascript %}
+```javascript
 var myEpicObject = {} someFunction();
-{% endcodeblock %}
+```
 
 Obviously that will throw an error, `}` followed by ` s` does not make sense in JavaScript. The other parts of our wrapper, `(function() {` and `}());`, simply wrap our code in an anonymous function which is called instantly. It is pretty much the same as writing this.
 
-{% codeblock lang:javascript %}
+```javascript
 function main() {
 	// YOUR CODE
 }
 
 main();
-{% endcodeblock %}
+```
 
 The only difference is that `main` will now be in the global namespace, whereas the other method does not pollute anything.
 
@@ -73,7 +73,7 @@ The only difference is that `main` will now be in the global namespace, whereas 
 
 It is pretty standard for the newer JavaScript libraries to work on both browsers and servers with the same code these days. But how can you write something that will run in Chrome, Firefox and node.js in my terminal? First you place your code in the wrapper as shown above, then you simply create an alias to the global variable of your current environment.
 
-{% codeblock lang:javascript %}
+```javascript
 ;(function(exports) {
 	// First you define your class
 	function SomeClass() {
@@ -87,18 +87,18 @@ It is pretty standard for the newer JavaScript libraries to work on both browser
 	// And then you expose it
 	exports.SomeClass = SomeClass;
 }(this)); // <-- this = the global object is passed as exports
-{% endcodeblock %}
+```
 
 This will allow compressors such as [UglifyJS](https://github.com/mishoo/UglifyJS/) to minify your code better, will keep any helper functions and variables private and will allow you to expose what you choose to the global object. So with the code above you could then use the class like so.
 
-{% codeblock lang:javascript %}
+```javascript
 // This is only required for server side environments such as node.js
 // In the browser you would use a script tag to load it
 var SomeClass = require('someclass').SomeClass;
 
 // Then you can call the class like this
 var foo = new SomeClass();
-{% endcodeblock %}
+```
 
 ## Validation
 
@@ -106,7 +106,7 @@ If you haven't already I insist you read [JavaScript: The Good Parts](http://www
 
 I recommend ticking almost **every** box on the JSHint site, use your common sense with the last few on the far right (i.e. don't tick jQuery unless you are using it), and adding `/*jshint smarttabs:true*/` to the top of your document, if you use JSDoc style function comments that is. Now if you run your code through that, I am sure you will get at least one error, that will probably be "Missing "use strict" statement." which is simple to fix. Just add `'use strict';` at the top of your function wrapper like this.
 
-{% codeblock lang:javascript %}
+```javascript
 /*jshint smarttabs:true*/
 
 ;(function(exports) {
@@ -114,7 +114,7 @@ I recommend ticking almost **every** box on the JSHint site, use your common sen
 	
 	// code...
 }(this));
-{% endcodeblock %}
+```
 
 If you follow the guidelines laid down by The Good Parts and JSHint you will find and fix so many errors before they bite you in the&hellip;
 

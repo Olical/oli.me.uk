@@ -19,7 +19,7 @@ I admit, because of using newer CSS, namely the `:checked` pseudo selector, you 
 
 Now the HTML for this particular accordion is a little more complicated than some. That is because we are utilizing radio buttons to perform the toggle on click action. But do not fear, it only means one extra element that is actually set to `display: none`.
 
-{% codeblock lang:html %}
+```html
 <ul class='accordion'>
 	<li>
 		<label for='cp-1'>Content pane 1</label>
@@ -37,7 +37,7 @@ Now the HTML for this particular accordion is a little more complicated than som
 		</div>
 	</li>
 </ul>
-{% endcodeblock %}
+```
 
 I have only added two content panes here, but you can add as many as you require. As you can see, we have a simple unordered list with a class applied to it (`<ul class='accordion'>`). Each list item contains a label, input and div. The label is where you store your title and the div is where you put your content. You can style all of this however you want. Just adapt my CSS that I will show you in a second.
 
@@ -47,7 +47,7 @@ When adding more items you must remember to update the `for` attribute on the la
 
 Now here is the code that makes the accordion work. I have added comments to help you out, but you may still find it a bit confusing. If you do just utilize it in your project via copy and paste first, then keep tweaking it until you know what does what. I believe that it is one of the best ways to understand some confusing code. Style it up, add some transitions. Maybe even adapt it to work horizontally. Just don't say "bah! that looks too hard, I give up". Just experiment.
 
-{% codeblock lang:css %}
+```css
 /* Clean up the lists styles */
 ul.accordion {
 	list-style: none;
@@ -90,7 +90,7 @@ ul.accordion div.content {
 ul.accordion label + input[type='radio']:checked + div.content {
 	display: block;
 }
-{% endcodeblock %}
+```
 
 So this CSS first adds some basic styles, so we can actually distinguish between content panes, and then adds the radio button based functionality. This relies heavily on the adjacent sibling selector (`+`). So in the last selector we are saying: "any div with a class of 'content' that is under a checked radio button that is under a label should be displayed". See, that's not so bad is it, and that is the most complicated line!
 

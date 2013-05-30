@@ -19,9 +19,9 @@ You can learn more about it in the [GitHub repository](https://github.com/Wolfy8
 
 So here is a really simple example as to how you use it. First off you start out with your dates within elements. I am using span tags within a paragraph because that is probably one of the most common places.
 
-{% codeblock lang:html %}
+```html
 <p>The London 2012 Olympic games will begin on <span id='olympics-date' data-format='dddd [the] Do [of] MMMM [at] h:mma'>27 July 2012, 21:00:00 GMT</span>.</p>
-{% endcodeblock %}
+```
 
 As you can see I am specifying an ID to access it with, this can be anything you want, and a date format for the parsed date to be outputted with. When converted this will output the following for users in the CST timezone.
 
@@ -29,7 +29,7 @@ As you can see I am specifying an ID to access it with, this can be anything you
 
 Now to make this date actually get executed you are going to first need two scripts. The first is [moment.js](http://momentjs.com/) for the date parsing and the second is [the actual xtz script](https://github.com/Wolfy87/xtz/blob/master/xtz.js). You need to load these two scripts before your own code. xtz supports AMD too if thats how you want to do it. Once done you setup an instance of `xtz.DateConverter` and run it. If you want to then you can easily swap out moment.js for any other date library, it just [requires a tiny bit of configuration](https://github.com/Wolfy87/xtz#dependencies).
 
-{% codeblock lang:html %}
+```html
 <script type='text/javascript' src='moment.js'></script>
 <script type='text/javascript' src='xtz.js'></script>
 <script type='text/javascript'>
@@ -39,7 +39,7 @@ Now to make this date actually get executed you are going to first need two scri
     // And execute it
     converter.run(document.getElementById('olympics-date'));
 </script>
-{% endcodeblock %}
+```
 
 I am using the ID to fetch a single element in this example. Although you can also pass an array of elements. So if you are using MooTools or jQuery you can use their selector engines to make it a lot easier.
 

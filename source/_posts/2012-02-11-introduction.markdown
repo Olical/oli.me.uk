@@ -37,7 +37,7 @@ You may have noticed by now how some paragraphs are indented. I have focused hea
 
 I have also added hyphenation and made sure my lines are the optimal length. I want it to be as easy to read as possible. Because this is a development blog, I have tried to add nice syntax highlighting too. Here's how it looks.
 
-{% codeblock lang:javascript %}
+```javascript
 'use strict';
 
 var i = null;
@@ -45,7 +45,7 @@ var i = null;
 for(i = 0; i < 100; i += 1) {
 	console.log(i);
 }
-{% endcodeblock %}
+```
 
 ## Feedback?
 

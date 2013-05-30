@@ -22,7 +22,7 @@ To start you off, here is my example code. You can also [have a play with it on 
 
 ### HTML
 
-{% codeblock lang:html %}
+```html
 <!-- Used for centering my example -->
 <div class='container'>
     <!-- This is our banner the content will pull up over -->
@@ -40,11 +40,11 @@ To start you off, here is my example code. You can also [have a play with it on 
         </div>
     </div>
 </div>
-{% endcodeblock %}
+```
 
 ### CSS
 
-{% codeblock lang:css %}
+```css
 /* Give the page a nicer background */
 body {
     background-color: #CCCCCC;
@@ -87,7 +87,7 @@ body {
 .content {
     padding: 12px;
 }
-{% endcodeblock %}
+```
 
 ## Eh, what?
 
@@ -95,7 +95,7 @@ This may seem a little daunting. That is mainly because this is a fancy decorate
 
 ### HTML (simple)
 
-{% codeblock lang:html %}
+```html
 <!-- This is our banner the content will pull up over -->
 <img src='http://placekitten.com/400/220'>
 
@@ -103,11 +103,11 @@ This may seem a little daunting. That is mainly because this is a fancy decorate
 <div class='overlay'>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 </div>
-{% endcodeblock %}
+```
 
 ### CSS (simple)
 
-{% codeblock lang:css %}
+```css
 .overlay {
     /* Pull the content up over the banner */
     margin-top: -100px;
@@ -116,7 +116,7 @@ This may seem a little daunting. That is mainly because this is a fancy decorate
     /* This is the magic line that fixes most z-index issues */
     position: relative;
 }
-{% endcodeblock %}
+```
 
 See, pretty simple when you tear it down. So all we are doing is adding a negative top margin and setting the position to relative. The negative margin pulls the element up and the relative position makes sure the overlay ends up on top of the banner.
 

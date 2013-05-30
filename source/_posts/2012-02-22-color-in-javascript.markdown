@@ -13,7 +13,7 @@ Quite a while ago I wrote some JavaScript to help with manipulating colors. I wr
 
 Now, to rewrite this I am going to need some functions to convert colors in various formats to a base format. I will be using an array as a base. This array will simply contain the red green and blue values for the color. In the final class everything will be orderly and packaged away with nice function names. For now, I am just going to write some color conversion functions that you are free to use where ever you want.
 
-{% codeblock lang:javascript %}
+```javascript
 /**
  * Converts a hexadecimal color to an array
  * Containing it's red, green and blue values
@@ -110,11 +110,11 @@ function name2array(color) {
 console.log(hex2array('#DDCCAA'));
 console.log(rgb2array('rgb(10,  20  ,200)'));
 console.log(name2array('Indian Red'));
-{% endcodeblock %}
+```
 
 Whew! That's a lot of code! I have had to leave out a lot of the color names simply because of how many there are. You can find the full code in [the fiddle I created](http://jsfiddle.net/Wolfy87/XDnEL/). These functions will convert hexadecimal, RGB and color names to an array containing their RGB values. I have not added functions to convert the other way in here because they will come with the Color class I am going to write. Well, just in case you really need to convert something now, here is how to convert back to an RGB value. Pretty simple but useful too.
 
-{% codeblock lang:javascript %}
+```javascript
 /**
  * Converts an RGB array to an RGB string
  * 
@@ -125,6 +125,6 @@ function array2rgb(color) {
 	// Combine and return the values
 	return 'rgb(' + color.join() + ')';
 }
-{% endcodeblock %}
+```
 
 So there you have it. Three functions to convert colors into a JavaScript friendly format and one to go back the other way. You will find these and more as I rewrite [my Color class](https://github.com/Wolfy87/Color). I also plan to add hue, saturation and lightness control to my class. Now that is going to be fun. I hope these functions will help some people out. If they do, let me know!
