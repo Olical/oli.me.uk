@@ -2,6 +2,7 @@
 layout: post
 title: Thoughts on JavaScript libraries and frameworks
 date: 2012-03-09 22:23:00
+comments: true
 categories:
  - javascript
 ---

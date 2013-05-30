@@ -2,6 +2,7 @@
 layout: post
 title: Introduction
 date: 2012-02-11 20:10:00
+comments: true
 categories:
  - meta
  - less

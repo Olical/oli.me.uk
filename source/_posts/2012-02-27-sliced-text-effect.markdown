@@ -2,6 +2,7 @@
 layout: post
 title: Sliced text effect
 date: 2012-02-27 22:05:00
+comments: true
 categories:
  - css
  - html
