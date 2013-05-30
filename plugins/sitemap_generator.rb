@@ -46,7 +46,7 @@ module Jekyll
   SITEMAP_FILE_NAME = "sitemap.xml"
 
   # Any files to exclude from being included in the sitemap.xml
-  EXCLUDED_FILES = ["atom.xml", "404/index.html"]
+  EXCLUDED_FILES = ["atom.xml", "/errors/", "/examples/"]
 
   # Any files that include posts, so that when a new post is added, the last
   # modified date of these pages should take that into account
@@ -161,7 +161,7 @@ module Jekyll
     # Returns last_modified_date of index page
     def fill_pages(site, urlset)
       site.pages.each do |page|
-        if !excluded?(page.name)
+        if !excluded?(page.full_path_to_source)
           path = page.full_path_to_source
           if File.exists?(path)
             url = fill_url(site, page)
@@ -281,7 +281,7 @@ module Jekyll
     #
     # Returns boolean
     def excluded?(name)
-      EXCLUDED_FILES.include? name
+      EXCLUDED_FILES.any? { |word| name.include?(word) }
     end
 
     def posts_included?(name)
