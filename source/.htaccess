@@ -1,15 +1,49 @@
+# Map the error pages
 ErrorDocument 404 /errors/404/
+ErrorDocument 500 /errors/500/
 
+
+# Enable ETags.
+FileETag MTime Size
+<filesmatch "\.(jpg|gif|png|css|js)$">
+	ExpiresActive on
+	ExpiresDefault "access plus 1 year"
+</filesmatch>
+
+
+# Enable expires headers.
+ExpiresActive On
+ExpiresByType image/gif "access plus 1 months"
+ExpiresByType image/jpg "access plus 1 months"
+ExpiresByType image/jpeg "access plus 1 months"
+ExpiresByType image/png "access plus 1 months"
+ExpiresByType image/vnd.microsoft.icon "access plus 1 months"
+ExpiresByType image/x-icon "access plus 1 months"
+ExpiresByType image/ico "access plus 1 months"
+ExpiresByType application/javascript "now plus 1 months"
+ExpiresByType application/x-javascript "now plus 1 months"
+ExpiresByType text/javascript "now plus 1 months"
+ExpiresByType text/css "now plus 1 months"
+ExpiresDefault "access plus 1 days"
+
+
+# Enable gzip compression.
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript application/json
+
+
+# Redirect www to non-www.
 RewriteEngine On
-
 RewriteCond %{HTTP_HOST} ^www.oli.me.uk$ [NC]
 RewriteRule ^(.*)$ http://oli.me.uk/$1 [R=301,L]
 
+# Redirect old style URLs to their prettier new ones.
 RedirectMatch 301 ^(/\d{4}/\d{2}/\d{2}/[\w\-]+).html$ $1/
 RedirectMatch 301 ^/page(\d+)/$ /page/$1/
 
+# Redirect moved pages from the old blog.
 RedirectMatch 301 ^/(about|contact).html$ /about-me/
 RedirectMatch 301 ^/rss.xml$ /atom.xml
 RedirectMatch 301 ^/tags.html$ /archives/
 
+# Redirect my old GitHub pages for repositories to their new github.io URLs.
 RedirectMatch 301 ^/(outline|CSSOff|more|NyanTunnel|Photon) http://wolfy87.github.io/$1/
