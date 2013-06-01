@@ -1,5 +1,10 @@
 ErrorDocument 404 /errors/404/
 
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www.oli.me.uk$ [NC]
+RewriteRule ^(.*)$ http://oli.me.uk/$1 [R=301,L]
+
 RedirectMatch 301 ^(/\d{4}/\d{2}/\d{2}/[\w\-]+).html$ $1/
 RedirectMatch 301 ^/page(\d+)/$ /page/$1/
 
