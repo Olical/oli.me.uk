@@ -12,7 +12,7 @@ categories:
 
 I've read a lot of posts in the past on this subject; this includes some by massively influential developers such as [John Resig][jr-inheritance]. I don't think the popular methods are the right way though. They all feel synthetic and unnatural. Not nearly vanilla enough for me.
 
-Plain ol' JavaScript is perfectly capable of handling all of your inheritance needs without the use of wrapper methods or those pesky `Class` instances. Of course, you can wrap these simple techniques into functions if you want to, it probably looks a little prettier that way.
+Plain ol' JavaScript is perfectly capable of handling all of your inheritance needs without the use of wrapper methods or those pesky `Class` instances. Of course, you can wrap these simple techniques up inside functions if you want to, it probably looks a little prettier that way.
 
 <!-- more -->
 
