@@ -141,6 +141,75 @@ image instanceof Element; // true
 image instanceof ImageElement; // true
 ```
 
+## Calling the "super" methods
+
+When you extend a class and override a method you will probably want to call the parent method too, just to make sure you're not missing anything. You do that in the way you would expect, even if it is a little verbose.
+
+```javascript
+function Element() {}
+Element.prototype.render = function() {
+	// Generic element rendering code.
+};
+
+function ImageElement() {}
+ImageElement.prototype = Object.create(Element.prototype);
+ImageElement.prototype.render = function() {
+	// Call the super method.
+	// Be sure to apply it onto our current object with call(this)!
+	Element.prototype.render.call(this);
+
+	// Rendering code specific to images.
+};
+```
+
+## Polishing it all off
+
+I think this method of inheritance is as simple as it gets and covers every angle in regards to inheriting a class. If you wanted to do things such as mixins, it would work exactly the same as this, you would just need a method which copied all of the properties from the mixin object into the target classes prototype. All of this can be as simple as you want it to be.
+
+To make all of this a bit quicker to type you can add one small function, even though it isn't completely required. This is just for convenience really.
+
+```javascript
+/**
+ * Extends one class with another.
+ *
+ * @param {Function} destination The class that should be inheriting things.
+ * @param {Function} source The parent class that should be inherited from.
+ * @return {Object} The prototype of the parent.
+ */
+function extend(destination, source) {
+	destination.prototype = Object.create(source.prototype);
+	destination.prototype.constructor = destination;
+	return source.prototype;
+}
+```
+
+You can use this method like so.
+
+```javascript
+function Element() {}
+
+function ImageElement() {}
+var parent = extend(ImageElement, Element);
+```
+
+And now the `ImageElement` class will inherit from `Element`, have the correct constructor attribute and `parent` will point to the parent's prototype object. You can use this reference when calling the parent methods after overriding an existing function.
+
+```javascript
+ImageElement.prototype.render = function() {
+	// Call the super method.
+	// Be sure to apply it onto our current object with call(this)!
+	parent.render.call(this);
+
+	// Rendering code specific to images.
+};
+```
+
+That little reference just makes everything a little bit easier to type and read.
+
+## Got it?
+
+So, that's about it. That's how you inherit classes in pure JavaScript in a very robust yet easy way. If any of this isn't quite clear then please feel free to ask me about it in the comments. I hope you found this useful.
+
 [jr-inheritance]: http://ejohn.org/blog/simple-javascript-inheritance/
 [create]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
 [use-create]: http://kangax.github.io/es5-compat-table/#Object.create
