@@ -44,6 +44,7 @@ RedirectMatch 301 ^/page(\d+)/$ /page/$1/
 RedirectMatch 301 ^/(about|contact).html$ /about-me/
 RedirectMatch 301 ^/rss.xml$ /atom.xml
 RedirectMatch 301 ^/tags.html$ /archives/
+RedirectMatch 301 ^/2012/05/19/fun-with-negative-margins/$ /2012/05/18/fun-with-negative-margins/
 
 # Redirect my old GitHub pages for repositories to their new github.io URLs.
 RedirectMatch 301 ^/(outline|CSSOff|more|NyanTunnel|Photon) http://wolfy87.github.io/$1/
