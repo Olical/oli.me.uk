@@ -98,8 +98,20 @@ var index = models.binaryIndexOf(someModel);
 
 Let me know what you think and if you have any improvements or suggestions. I hope this can help to destroy a bottleneck or two (or 100,000).
 
+## Edit: Where should you stick it?
+
+[doomslice over on reddit][reddit-return] suggested that I return the [twos compliment][twos] in place of -1. As far as I can tell, this means returning the negative version of the last place that was checked. So if you wanted to insert a value and wanted to know where you should put it, you could run the function and use the returns number to splice the value into the array.
+
+This way you can add items without ruining the order. You don't exactly want to go re-sorting potentially thousands of values every time you add something. Here's the modified function I came up with, as well as a working example. It demonstrates finding where to insert an element and then inserting it.
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/Wolfy87/5dcWN/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+As you can see, because I use `Math.abs` as the index during the splice, it will always insert the element in the right place, even if there is an identical value already there! Pretty cool. You do have to be careful though, now you are going to need to check for `< 0`, and not `=== -1` when you are looking for existence of a value.
+
 [bs-wikipedia]: http://en.wikipedia.org/wiki/Binary_search_algorithm
 [log]: http://en.wikipedia.org/wiki/Logarithmic_time#Logarithmic_time
 [perf]: http://jsperf.com/binaryindexof-and-indexof
 [jsbinsearch]: https://gist.github.com/Wolfy87/5734530
 [valueof]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf
+[reddit-return]: http://www.reddit.com/r/javascript/comments/1fx4od/searching_javascript_arrays_with_a_binary_search/caeo5is
+[twos]: http://en.wikipedia.org/wiki/Two%27s_complement
