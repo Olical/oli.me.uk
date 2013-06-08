@@ -17,6 +17,8 @@ You will probably find that `indexOf` doesn't quite cut it in those situations. 
 
 This is where you have an excuse to suggest a binary search and blow everyone else's minds.
 
+<!-- more -->
+
 ## What is it
 
 A binary search searches by splitting your array into smaller and smaller chunks until it finds your desired value. Unlike the normal `indexOf` which searches from left to right in a simple iteration. [The binary search Wikipedia article][bs-wikipedia] explains it best (as always). There are a couple of downsides; It will be slower with smaller data sets (this needs proving) and the array you are searching **needs to be sorted**.
