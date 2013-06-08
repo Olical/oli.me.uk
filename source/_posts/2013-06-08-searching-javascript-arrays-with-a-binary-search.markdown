@@ -106,7 +106,7 @@ This way you can add items without ruining the order. You don't exactly want to 
 
 <iframe width="100%" height="300" src="http://jsfiddle.net/Wolfy87/5dcWN/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-As you can see, because I use `Math.abs` on the index during the splice, it will always insert the element in the right place, even if there is an identical value already there! Pretty cool. You do have to be careful though, now you are going to need to check for `index < 0`, and not `index === -1` when you are looking for existence of a value.
+As you can see, because I use the bitwise NOT operator (`~`, also suggested by doomsice!) on the index during the splice, it will always insert the element in the right place, even if there is an identical value already there! Pretty cool. You do have to be careful though, now you are going to need to check for `index < 0`, and not `index === -1` when you are looking for existence of a value.
 
 [bs-wikipedia]: http://en.wikipedia.org/wiki/Binary_search_algorithm
 [log]: http://en.wikipedia.org/wiki/Logarithmic_time#Logarithmic_time
