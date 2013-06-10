@@ -45,7 +45,7 @@ function binaryIndexOf(searchElement) {
 	var currentElement;
 
 	while (minIndex <= maxIndex) {
-		currentIndex = Math.floor((minIndex + maxIndex) / 2);
+		currentIndex = (minIndex + maxIndex) / 2 | 0;
 		currentElement = this[currentIndex];
 
 		if (currentElement < searchElement) {
@@ -62,6 +62,8 @@ function binaryIndexOf(searchElement) {
 	return -1;
 }
 ```
+
+*Edit: I've swapped `Math.floor` for `number | 0` at [Yehonatan's reccomendation][yeh-reccomendation]. [It's faster sometimes][rounding-jsperf].*
 
 ## Real world use case
 
@@ -115,3 +117,5 @@ As you can see, because I use the bitwise NOT operator (`~`, also suggested by d
 [valueof]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf
 [reddit-return]: http://www.reddit.com/r/javascript/comments/1fx4od/searching_javascript_arrays_with_a_binary_search/caeo5is
 [twos]: http://en.wikipedia.org/wiki/Two%27s_complement
+[yeh-reccomendation]: http://oli.me.uk/2013/06/08/searching-javascript-arrays-with-a-binary-search/#comment-924876342
+[rounding-jsperf]: http://jsperf.com/jsfvsbitnot/8
