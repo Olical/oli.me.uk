@@ -14,5 +14,16 @@ I tried to solve some problems within [Project Euler][euler] a long time ago usi
 
 <!-- more -->
 
+## The problem
+
+[Problem 1][problem-1] is described as follows:
+
+> If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+>
+> Find the sum of all the multiples of 3 or 5 below 1000.
+
+At a first glance I feel that there will be an obvious brute force way (loop and add as we go) and a dainty efficient one. I'll try a brute force attempt first, and then see how graceful I can get it. All of my solution posts will follow a similar format, I will learn as I write the post so you can see my full thought process as I progress.
+
 [MDN]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [euler]: https://projecteuler.net/
+[problem-1]: https://projecteuler.net/problem=1
