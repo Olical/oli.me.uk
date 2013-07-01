@@ -4,7 +4,7 @@ require "stringex"
 
 ## -- Rsync Deploy config -- ##
 # Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
-ssh_user       = "olical@olical.webfactional.com"
+ssh_user       = "olical@oli.me.uk"
 ssh_port       = "22"
 document_root  = "~/webapps/olimeuk/"
 rsync_delete   = true
