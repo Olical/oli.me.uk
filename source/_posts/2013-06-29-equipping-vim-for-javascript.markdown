@@ -45,7 +45,7 @@ Now you are going to want to install [`jelera/vim-javascript-syntax`][vim-javasc
 Bundle 'jelera/vim-javascript-syntax'
 ```
 
-After configuring and executing `vim +BundleInstall` ([learn about Vundle](vundle-quickstart) if you haven't already!) your JavaScript should *look* a lot nicer.
+After configuring and executing `vim +BundleInstall` ([learn about Vundle][vundle-quickstart] if you haven't already!) your JavaScript should *look* a lot nicer.
 
 ### Indenting (plus a couple of extra visual features)
 
