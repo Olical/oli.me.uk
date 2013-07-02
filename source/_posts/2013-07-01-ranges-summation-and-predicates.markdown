@@ -82,7 +82,36 @@ I don't know about you, but I think the line that actually calculates the result
 
 ## The imperative equivalent
 
-...
+I thought it would be worth showing you a quick and dirty imperative equivalent without the use of Underscore; just in case you're finding it hard to grasp these weird functional concepts.
+
+```javascript
+var range = createRange(1, 11);
+var result = 0;
+var i;
+
+for (i = 0; i < range.length; i += 1) {
+	if (range[i] % 2 === 0) {
+		result += range[i];
+	}
+}
+
+function createRange(from, to) {
+	var result = [];
+	var i;
+
+	for (i = from; i < to; i += 1) {
+		result.push(i);
+	}
+
+	return result;
+}
+
+result; // 30
+```
+
+I personally prefer the functional method because you end up with a toolbox of useful functions and a *beautiful* high level API that you can just skim over and quickly see what's going on. The fact that the functional version hides the use of iteration makes me feel all warm inside too.
+
+Functional programming seems to be for humans, once you stop thinking in an imperative way, and imperative programming appears to be better for the computer.
 
 ## In summary
 
