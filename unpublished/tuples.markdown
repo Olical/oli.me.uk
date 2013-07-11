@@ -8,6 +8,39 @@ So, I set about writing a tiny tuple implementation in JavaScript; this is what 
 
 <!-- more -->
 
+## The base class definition
+
+For starters, I needed a simple class definition that created the tuple instance, set it's size and stored some initial data.
+
+```javascript
+function Tuple(/* values */) {
+	this._store = new Array(arguments.length);
+}
+```
+
+By calling `new Typle(...)` you can now define a tuple that creates an internal storage array of the appropriate length. Now we need a function that sets those values, that function also needs to be called from the constructor.
+
+```javascript
+function Tuple(/* values */) {
+	var args = Array.prototype.slice.call(arguments, 0);
+	this._store = new Array(args.length);
+	this.pack.apply(this, args);
+}
+
+Tuple.prototype.pack = function pack(/* values */) {
+	var store = this._store;
+	var i = store.length;
+
+	while (i--) {
+		store[i] = arguments[i];
+	}
+
+	return this;
+};
+```
+
+Now the arguments you pass to the constructor are sliced into an array and pushed onto the `pack` method which bundles them into the storage array. The pack method simply iterates over it's arguments and assigns each one to it's place in the storage.
+
 [fjs]: http://shop.oreilly.com/product/0636920028857.do
 [hs]: http://www.haskell.org/
 [lyah]: http://learnyouahaskell.com/
