@@ -85,7 +85,40 @@ I would not advise using anonymous functions like I have done above in productio
 
 ## Integration with other tuples and types
 
-> Talk about toString and valueOf here.
+One thing you can add to make it behave slightly more like a native type is to add a `toString` method.
+
+```javascript
+Tuple.prototype.toString = function toString() {
+	return ['(', this._store.join(', '), ')'].join('');
+};
+```
+
+You can take this a little further by adding a `valueOf` method that will even allow you to concatenate or add together multiple tuples, albeit in a rudimentary way.
+
+```javascript
+Tuple.prototype.valueOf = function valueOf() {
+	var store = this._store;
+	var storeLength = store.length;
+	var total = store[0];
+	var i;
+
+	for (i = 1; i < storeLength; i += 1) {
+		total += store[i];
+	}
+
+	return total;
+};
+```
+
+Now with a `valueOf` method you can do stuff like this...
+
+```javascript
+var p1 = new Tuple(10, 20);
+var p2 = new Tuple(40, 50);
+
+console.log(p2 > p1); // true
+console.log(p1 + p2); // 120
+```
 
 [fjs]: http://shop.oreilly.com/product/0636920028857.do
 [hs]: http://www.haskell.org/
