@@ -132,8 +132,11 @@ console.log(p1 + p2); // 120
 
 So now you can create a tuple type which sits in between an object and an array which has some pretty cool arithmetic and concatenation methods due to `valueOf`. Hopefully you can find this useful. If there was actually any demand for it then I guess I could dump this into a repository with some unit tests too. Maybe I'm the only one that finds this kind of idea to JavaScript porting interesting though.
 
+You can play about with my code in [this fiddle][tuplefiddle].
+
 [fjs]: http://shop.oreilly.com/product/0636920028857.do
 [hs]: http://www.haskell.org/
 [lyah]: http://learnyouahaskell.com/
 [tuples]: https://en.wikipedia.org/wiki/Tuple
 [fns]: https://en.wikibooks.org/wiki/Haskell/Lists_and_tuples#Example:_fst_and_snd
+[tuplefiddle]: http://jsfiddle.net/Wolfy87/nuGWQ/
