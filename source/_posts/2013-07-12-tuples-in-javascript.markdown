@@ -1,3 +1,13 @@
+---
+layout: post
+title: "Tuples in JavaScript"
+date: 2013-07-12 22:01
+comments: true
+categories:
+ - javascript
+ - tuples
+---
+
 As my last post mentioned, I recently read [Functional JavaScript][fjs] can't physically recommend it enough. This book has caused me to make the mental leap between real world applications and functional programming due to the fact that it's written in a language I live and breath.
 
 After reading this I was inspired to pick up [Haskell][hs] from where I left off last time; a "Hello, World!" application. I've since started to work through [Learn You a Haskell for Great Good!][lyah], which is yet another excellent book. Reading this has caused me to think about certain programming things we don't have in JavaScript.
