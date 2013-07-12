@@ -130,6 +130,8 @@ console.log(p2 > p1); // true
 console.log(p1 + p2); // 120
 ```
 
+So now you can create a tuple type which sits in between an object and an array which has some pretty cool arithmetic and concatenation methods due to `valueOf`. Hopefully you can find this useful. If there was actually any demand for it then I guess I could dump this into a repository with some unit tests too. Maybe I'm the only one that finds this kind of idea to JavaScript porting interesting though.
+
 [fjs]: http://shop.oreilly.com/product/0636920028857.do
 [hs]: http://www.haskell.org/
 [lyah]: http://learnyouahaskell.com/
