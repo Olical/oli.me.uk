@@ -26,11 +26,11 @@ Now it's about as clear as it can get. `healthBar` is some kind of container in 
 
 `update` is actually `updateScoreDisplay`, so it must render a value to the screen. The value that was passed to it will almost certainly be a number representing the users current score.
 
-As a wise meerkat once said, "simples".
+Clean and simple. It's self commenting code without a `//` in sight.
 
 ## Real world stuff
 
-My [EventEmitter][] class has an `addListener` method, which had an `on` alias added in a pull request. Say you have a class called `Switch` which extends `EventEmitter`. Before you've even added anything to the prototype your class has an `on` and `off` method. It's not exactly ideal. `switch.addListener(...)` makes heaps more sense than `switch.on(...)`.
+My [EventEmitter][] class has an `addListener` method, which had an `on` alias which was added in a pull request. Say you have a class called `Switch` which extends `EventEmitter`. Before you've even added anything to the prototype your class has an `on` and `off` method. It's not exactly ideal. `switch.addListener(...)` makes heaps more sense than `switch.on(...)`.
 
 I used to let this kind of thing slide, since working at Amazon I feel compelled to move more and more code to their verbose alternative naming schemes. I can't really remove those aliases from my class, but hopefully I can convince anyone reading this not to add anything similar to theirs. It doesn't matter what the rest of the JavaScript community is doing, *they're* doing it wrong.
 
