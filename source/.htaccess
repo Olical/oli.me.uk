@@ -39,7 +39,7 @@ RewriteRule ^(.*)$ http://oli.me.uk/$1 [R=301,L]
 # Redirect old style URLs to their prettier new ones.
 RedirectMatch 301 ^(/\d{4}/\d{2}/\d{2}/[\w\-]+).html$ $1/
 RedirectMatch 301 ^(/\d{4}/\d{2}/\d{2}/[\w\-]+)$ $1/
-RedirectMatch 301 ^/page(\d+)/$ /page/$1/
+RedirectMatch 301 ^/page(\d+) /page/$1/
 
 # Redirect moved pages from the old blog.
 RedirectMatch 301 ^/(about|contact).html$ /about-me/
