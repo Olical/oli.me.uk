@@ -102,4 +102,14 @@ The CommonJS approach is very similar to the AMD one. We check for a global vari
 
 I am exposing my class by replacing the entire exports object because I only have one value to export, you might want to just add your class to the exports object as I have shown in the comment above. This is the route you need to take if you need to expose multiple classes, functions or variables in a name space format.
 
+Now your code should be exposed via the global name space for loading through `<script>` tags, AMD for modules in the browser and CommonJS for modules within platforms such as node.js.
+
+## For larger AMD projects
+
+If you have multiple classes that you need to expose across one large AMD project you will probably be better off having a stub script that depends on every file in your project. This script can expose your classes as I have done above. You can flatten that script with [r.js][], and you can add a minimal AMD shim by including [almond][].
+
+Hopefully you will all find it a little easier to expose your code on multiple platforms now.
+
 [ee-expose]: https://github.com/Wolfy87/EventEmitter/blob/ae0c5099bd8f08a61f70a0ebc39b32a2ce52ddb0/EventEmitter.js#L425-L436
+[r.js]: http://requirejs.org/docs/optimization.html
+[almond]: https://github.com/jrburke/almond
