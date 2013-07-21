@@ -50,4 +50,56 @@ With that set up you can selectively expose the values you want to without leaki
 
 Now only the `Foo` class is exposed. You can have as many local methods or variables as you require without creating a pile of rubbish that floats around in the `window` object for all eternity.
 
+## Adding AMD into the mix
+
+Global objects are all well and good, but AMD (or any other module system) is much better. You can modify your original selective exposing code to send your class out through AMD very easily.
+
+```javascript
+(function () {
+	// YOUR ORIGINAL CODE HERE
+
+	if (typeof define === 'function' && define.amd) {
+		define(function () {
+			return Foo;
+		});
+	}
+	else {
+		this.Foo = Foo;
+	}
+}.call(this));
+```
+
+As you can see, I have just added a check for the `define` function, part of the AMD API, and then made sure it is from an AMD library and not a naming collision by looking for the `define.amd` flag. If this check fails and there is no AMD library present it will fall back to exposing through the global object.
+
+You could tweak this so that your code is *always* exposed globally and add AMD support along side it; I personally think that if someone has AMD on the page, they will probably load all AMD compatible scripts with it. If you are loading through AMD you don't really want things leaking into the global name space.
+
+## Don't forget CommonJS!
+
+Global objects and AMD work brilliantly in the browser, but you will probably want to support platforms such as node.js if you can. It's really easy to add support for node's module system. We just need to add another case to our exposing if statement.
+
+```javascript
+(function () {
+	// YOUR ORIGINAL CODE HERE
+
+	if (typeof define === 'function' && define.amd) {
+		define(function () {
+			return Foo;
+		});
+	}
+	else if (typeof module !== 'undefined' && module.exports) {
+		module.exports = Foo;
+
+		// Or maybe: module.exports.Foo = Foo;
+		// It's up to you really.
+	}
+	else {
+		this.Foo = Foo;
+	}
+}.call(this));
+```
+
+The CommonJS approach is very similar to the AMD one. We check for a global variable and then confirm our suspicions that it is definitely the system we were looking for.
+
+I am exposing my class by replacing the entire exports object because I only have one value to export, you might want to just add your class to the exports object as I have shown in the comment above. This is the route you need to take if you need to expose multiple classes, functions or variables in a name space format.
+
 [ee-expose]: https://github.com/Wolfy87/EventEmitter/blob/ae0c5099bd8f08a61f70a0ebc39b32a2ce52ddb0/EventEmitter.js#L425-L436
