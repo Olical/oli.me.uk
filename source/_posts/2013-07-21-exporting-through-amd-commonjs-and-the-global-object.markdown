@@ -33,7 +33,7 @@ function someHelper() {
 }
 ```
 
-You will also notice how I have named my `get` method in two places. This is so you can call it with `.get()`, as usual, but it will show up as a function called `get` if you were trying to debug something that called it. The usual practice is to assign anonymous functions which makes it harder to work out what is going where at a glance.
+You will also notice how I have named my `get` method in two places. This is so you can call it with `.get()`, as usual, but it will show up as a function called `get` if you were trying to debug something that called it. The usual practice is to assign anonymous functions which makes it harder to work out what is going on at a glance.
 
 Another thing to note is that my helper function, aptly named `someHelper`, is also leaking into the global name space. That's awful! Well, presuming it's meant to be a private method.
 
@@ -47,7 +47,7 @@ You can stop any of your functions, variables or classes from leaking by wrappin
 }.call(this));
 ```
 
-By calling the anonymous function with with `call(this)` it sets the `this` variable within the anonymous function to that of the global name space. This would be `window` in a browser. This is assuming the anonymous function is defined within a global scope though.
+By calling the anonymous function with with `call(this)` it sets the `this` variable within the anonymous function to that of the global name space. This would be `window` in a browser. This is assuming the anonymous function wrapper is defined within the global scope.
 
 With that set up you can selectively expose the values you want to without leaking anything.
 
