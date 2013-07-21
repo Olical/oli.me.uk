@@ -50,4 +50,4 @@ RedirectMatch 301 ^/examples/center-flexbox.html$ /examples/vertical-center/flex
 RedirectMatch 301 ^/2013/06/29/equipping-vim-for-javascript/vundle-quickstart$ https://github.com/gmarik/vundle#quick-start
 
 # Redirect my old GitHub pages for repositories to their new github.io URLs.
-RedirectMatch 301 ^/(outline|CSSOff|more|NyanTunnel|Photon)(.*) http://wolfy87.github.io/$1$2
+RedirectMatch 301 ^/(outline|CSSOff|more|NyanTunnel|Photon|Spark)(.*) http://wolfy87.github.io/$1$2
