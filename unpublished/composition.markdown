@@ -50,6 +50,41 @@ Lo-Dash is a fork of Underscore.js that includes more features and a huge amount
 
 Oh, and this also has AMD support, something Underscore.js lacks, sadly.
 
+## Fetching everything
+
+The cool thing about this is that you can depend on them all through [npm][] or [Bower][], so there's no need to fetch them all individually or commit them into your repository. Here's what my Bower package would look like.
+
+```json
+{
+	"name": "some-project",
+	"version": "0.0.0",
+	"main": "main.js",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"lodash": "*",
+		"crossroads.js": "*",
+		"maria": "*",
+		"mustache": "*",
+		"requirejs-mustache": "*",
+		"requirejs": "*"
+	}
+}
+```
+
+Obviously you can lock your dependencies to a specific version, but I'm just using the latest versions of all for now. All you have to do is run `bower install` to fetch the latest version of all your dependencies and you will have them all available within `bower_components`. Pretty neat.
+
+## Like the idea of this?
+
+I personally love the look of this and would prefer to compose my own framework as opposed to using a massive one that tries to do everything on its own. I'd love to hear reasons for or against it though, so let me know. Surely I can't be the *only* developer out there that likes blending multiple focussed libraries together?
+
+I hope you've found this useful.
+
 [Maria]: http://peter.michaux.ca/maria/
 [Crossroads.js]: http://millermedeiros.github.io/crossroads.js/
 [Django]: https://www.djangoproject.com/
@@ -58,3 +93,5 @@ Oh, and this also has AMD support, something Underscore.js lacks, sadly.
 [RequireJS]: http://requirejs.org/
 [Underscore.js]: http://underscorejs.org/
 [Lo-Dash]: http://lodash.com/
+[npm]: https://npmjs.org/
+[Bower]: http://bower.io/
