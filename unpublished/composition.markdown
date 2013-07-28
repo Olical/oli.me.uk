@@ -2,7 +2,7 @@ Whenever I dive into a frontend \*VC project of my own I always end up getting f
 
 I find this second approach **really** appealing and I'll probably put it into practice soon. One of the many reasons that I am drawn to composing my own framework (possibly on a per-project basis) is the similarities between that and the Unix philosophy.
 
-{% blockquote Doug McIlroy https://en.wikipedia.org/wiki/Unix_philosophy The Unix philosophy%}
+{% blockquote Doug McIlroy https://en.wikipedia.org/wiki/Unix_philosophy The Unix philosophy %}
 This is the Unix philosophy: *Write programs that do one thing and do it well*. Write programs to work together. Write programs to handle text streams, because that is a universal interface.
 {% endblockquote %}
 
