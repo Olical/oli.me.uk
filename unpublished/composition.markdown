@@ -42,9 +42,19 @@ You've already seen me ranting about AMD, obviously I will be using [RequireJS][
 
 There is no question about this really, it's the obvious choice for splitting everything into chunks and loading them when required into the browser.
 
+## Helpers and functional sugar
+
+I love having a library dedicated to helping me mess with my data, especially when I know how to use it within the world of functional programming (something I find extremely enjoyable). I find [Underscore.js][] incredibly useful for this, but I will definitely be using it's younger brother instead; the beauty that is, [Lo-Dash][].
+
+Lo-Dash is a fork of Underscore.js that includes more features and a huge amount of optimisations. The extra things include more functional programming helpers such as right partial application. I'd recommend it as a dependency for most projects, but this composition doubly so. It will provide some much needed helpers that can be used pretty much anywhere.
+
+Oh, and this also has AMD support, something Underscore.js lacks, sadly.
+
 [Maria]: http://peter.michaux.ca/maria/
 [Crossroads.js]: http://millermedeiros.github.io/crossroads.js/
 [Django]: https://www.djangoproject.com/
 [mustache.js]: https://github.com/janl/mustache.js
 [requirejs-mustache]: https://github.com/jfparadis/requirejs-mustache
 [RequireJS]: http://requirejs.org/
+[Underscore.js]: http://underscorejs.org/
+[Lo-Dash]: http://lodash.com/
