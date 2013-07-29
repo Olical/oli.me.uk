@@ -138,7 +138,7 @@ You can play about with my code in [this fiddle][tuplefiddle].
 
 Due to a sudden influx of views and opinions, I have decided to create an actual project based off of this idea; albeit a very simplified one. It can be found in the repository, [Wolfy87/tuple][tuple-repo]. I have finished and published the first release tonight and you can grab it from GitHub, Bower (`bower install tuple`) and npm (`npm install tuple-w`, the name "tuple" was taken).
 
-You will notice that this solidified version is a lot simpler though. There is no `valueOf` and there is no `pack` method. Once you have set the values with the contractor they are set forever. The object is now immutable (or as immutable as JavaScript can be) and can only be set once and then read. Exactly how a tuple should be.
+You will notice that this solidified version is a lot simpler though. There is no `valueOf` and there is no `pack` method. Once you have set the values with the constructor they are set forever. The object is now immutable (or as immutable as JavaScript can be) and can only be set once and then read. Exactly how a tuple should be.
 
 Hopefully this is closer to what most people expect from a tuple, although I know it is still a **very** long way off due to the limitations of JavaScript. Regardless, enjoy!
 
