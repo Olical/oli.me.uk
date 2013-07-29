@@ -28,7 +28,7 @@ function Tuple(/* values */) {
 }
 ```
 
-By calling `new Typle(...)` you can now define a tuple that creates an internal storage array of the appropriate length. Now we need a function that sets those values, that function also needs to be called from the constructor.
+By calling `new Tuple(...)` you can now define a tuple that creates an internal storage array of the appropriate length. Now we need a function that sets those values, that function also needs to be called from the constructor.
 
 ```javascript
 function Tuple(/* values */) {
