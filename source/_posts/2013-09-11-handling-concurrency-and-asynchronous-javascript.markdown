@@ -122,8 +122,8 @@ for (i = 0; i < length; i += 1) {
 }
 
 var gistBatch = new Batch(batchFunctions, function (results) {
-	// Here we have an array of response that we can render to the page!
-	// It's only executed once all of the requests have executed "batch.done(...)".
+	// Here we have an array of responses that we can render to the page.
+	// It's only executed once all of the requests have called "batch.done(...)".
 });
 
 gistBatch.execute(); // Away we go!
@@ -131,6 +131,6 @@ gistBatch.execute(); // Away we go!
 
 As you can see, I've used a simple class to solve a potentially complicated problem. Hopefully this will save you an hour or ten in the future.
 
-As always, I'd gladly turn this into a fully fledged package if there was enough interest. Let me know what you think of this technique below!
+As always, I'd gladly turn this into a fully fledged package if there was enough interest.
 
-[gist]: https://gist.github.com/
+[gist.github.com]: https://gist.github.com/
