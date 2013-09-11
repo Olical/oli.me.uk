@@ -31,6 +31,9 @@ This is just an empty class that will take an array of functions that it will ex
 Now we need a method that will execute all of our provided functions.
 
 ```javascript
+/**
+ * Executes the functions passed to the constructor.
+ */
 Batch.prototype.execute = function execute() {
 	var i;
 	var functions = this._functions;
@@ -46,5 +49,34 @@ Batch.prototype.execute = function execute() {
 When called, this will store the amount of remaining functions left to finish executing (`this._remaining`) and then begin the execution of each and every one of them. Each function will be passed the current instance of `Batch`, the functions will then have to call a method on that instance to signify that they are done.
 
 The `this._results` array will be used to hand the results of each function back to the completion handler when everything is finished.
+
+## Letting Batch know we're done
+
+Each function that is executed is going to need to signify that it is done somehow. We will do this by adding a third method to the `Batch` class which knocks one off of the `this._remaining` counter and executes the completion handler if we're done. We'll also allow this function to store a result in the `this._results` array.
+
+```javascript
+/**
+ * Signifies that another function has finished executing. Can be provided with
+ * a value to store in the results array which is passed to the completion
+ * handler.
+ *
+ * All functions in the batch must call this when done.
+ *
+ * @param {*} [result] Optional value to store and pass back to the completion handler when done.
+ */
+Batch.prototype.done = function done(result) {
+	this._remaining -= 1;
+
+	if (typeof result !== 'undefined') {
+		this._results.push(result);
+	}
+
+	if (this._remaining === 0) {
+		this._completionHandler(this._results);
+	}
+};
+```
+
+Now our asynchronous functions can let the class know when they're done, we can also store resulting values to be passed to the completion handler. In our case, this will probably be gist meta data objects or a chunk of JSON.
 
 [gist]: https://gist.github.com/
