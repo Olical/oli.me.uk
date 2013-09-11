@@ -133,4 +133,8 @@ As you can see, I've used a simple class to solve a potentially complicated prob
 
 As always, I'd gladly turn this into a fully fledged package if there was enough interest.
 
+## Obligatory JSFiddle example
+
+<iframe width='100%' height='300' src='http://jsfiddle.net/Wolfy87/kHAYN/embedded/' allowfullscreen='allowfullscreen' frameborder='0'></iframe>
+
 [gist.github.com]: https://gist.github.com/
