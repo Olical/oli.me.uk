@@ -77,6 +77,50 @@ Batch.prototype.done = function done(result) {
 };
 ```
 
-Now our asynchronous functions can let the class know when they're done, we can also store resulting values to be passed to the completion handler. In our case, this will probably be gist meta data objects or a chunk of JSON.
+Now our asynchronous functions can let the class know when they're done, we can also store resulting values to be passed along to the completion handler. In our case, this will probably be gist meta data object or a chunk of JSON. This call would probably be made from the `oncomplete` event of our chosen AJAX library.
+
+## Putting it into use
+
+Now we need to construct our array of functions, execute them as a batch and use their results. You'd need to do a little bit more work to add error handling and potential timeouts, but this should get you more than started.
+
+*I'm using an imaginary AJAX library and this could be written in much more efficient ways.*
+
+```javascript
+// The URLs we want to fetch, probably returned by an API or something.
+var urls = [
+	'/api/gists/1000',
+	'/api/gists/1001',
+	'/api/gists/1002',
+	'/api/gists/1003',
+	'/api/gists/1004',
+	// ...
+	'/api/gists/1337',
+	// etc...
+];
+
+var i;
+var length = urls.length;
+var batchFunctions = [];
+
+// Create our functions to be executed by the batch class.
+for (i = 0; i < length; i += 1) {
+	batchFunctions.push(function (batch) {
+		AJAXLib.get(urls[i], function (response) {
+			batch.done(response);
+		});
+	});
+}
+
+var gistBatch = new Batch(batchFunctions, function (results) {
+	// Here we have an array of response that we can render to the page!
+	// It's only executed once all of the requests have executed "batch.done(...)".
+});
+
+gistBatch.execute(); // Away we go!
+```
+
+As you can see, I've used a simple class to solve a potentially complicated problem. Hopefully this will save you an hour or ten in the future.
+
+As always, I'd gladly turn this into a fully fledged package if there was enough interest. Let me know what you think of this technique below!
 
 [gist]: https://gist.github.com/
