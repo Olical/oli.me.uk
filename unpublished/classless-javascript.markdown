@@ -88,3 +88,48 @@ console.log('Out of fuel!');
 Here I am creating a name list, adding some values and then dropping that object into a pool when I'm done. Then I'm requesting that object back out of the pool and reusing it as a car. This is a very simple example though, so much could have gone on in between those two creation calls that you don't even know what object you're reusing, but it doesn't matter.
 
 You could even have a `destroy` function for each namespace that wipes the objects values, eliminating the potential for memory leaks. This could easily be part of a pooling tool though, one that makes sure the objects you get out are all sanitised in the same way.
+
+## Improving the pool
+
+If you don't want to write a `destroy` method for each namespace then, as I mentioned above, you could have your pool code manage it for you. This means your objects will be sanitised as they are added to the pool, removing the risk of memory leaks.
+
+```javascript
+var pool = {
+	create: function (self) {
+		self.objects = [];
+		return self;
+	},
+	add: function (self, obj) {
+		var key;
+		
+		for (key in obj) {
+			if (obj.hasOwnProperty(key)) {
+				delete obj[key];
+			}
+		}
+		
+		self.objects.push(obj);
+	},
+	get: function (self) {
+		return self.objects.pop() || {};
+	}
+};
+
+// Accidental pun inbound!
+var carPool = pool.create({});
+
+var original = {
+	foo: true,
+	bar: false
+};
+
+console.log(JSON.stringify(original)); // "{"foo":true,"bar":false}"
+
+pool.add(carPool, original);
+var output = pool.get(carPool);
+
+console.log(original === output); // true
+console.log(JSON.stringify(output)); // "{}"
+```
+
+The pool namespace allows you to create a pool object. When you add to this pool the object is emptied to prevent memory leaks. When you fetch from it, it will either return an object from the pool or a new object where required. As you can see, the object I get back out is still *the same object* according to the browser, it just happens to be empty now.
