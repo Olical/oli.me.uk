@@ -133,3 +133,13 @@ console.log(JSON.stringify(output)); // "{}"
 ```
 
 The pool namespace allows you to create a pool object. When you add to this pool the object is emptied to prevent memory leaks. When you fetch from it, it will either return an object from the pool or a new object where required. As you can see, the object I get back out is still *the same object* according to the browser, it just happens to be empty now.
+
+## When to use this
+
+Unless you really like this style, as I do, you may be wondering why you would bother using this. What do you actually gain from this apart from a style that leans towards composition and functional programming? Well, you get speed in certain circumstances.
+
+I created a test on [jsPerf][] to highlight the difference pooling makes here. Using this style and creating a new object every time is actually slower than using `new` to create instances from the prototype, but using it in conjunction with a pool in object heavy code yields a rather large difference between instantiating classes and creating from a pool.
+
+So you can use it wherever you want if you like the style, but it's definitely a good idea to consider something like this in object heavy and performance critical code such as game engines. It may even yield a visible difference on much more limited platforms such as mobile devices, TVs and consoles.
+
+[jsPerf]: http://jsperf.com/classes-vs-simple-objects
