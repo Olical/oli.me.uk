@@ -1,3 +1,14 @@
+---
+layout: post
+title: "Classless JavaScript"
+date: 2013-09-17 21:40
+comments: true
+categories:
+ - javascript
+ - oop
+ - classes
+---
+
 As JavaScript developers, or even web developers as a whole, we seem terrified by the thought of direct usage. No technique or idea seems to be considered "legit" until it has been abstracted by several layers of syntactic sugar and, potentially useless, fluff.
 
 One of the common abstractions is the addition of "classes" to JavaScript; prototypical inheritance isn't good enough for us lot by the looks of things. We seem to crave the features of other languages when our language of choice isn't really built for them, it's built in a different way and probably shouldn't have classical inheritance principals forced down its VM / throat.
@@ -132,7 +143,7 @@ console.log(original === output); // true
 console.log(JSON.stringify(output)); // "{}"
 ```
 
-The pool namespace allows you to create a pool object. When you add to this pool the object is emptied to prevent memory leaks. When you fetch from it, it will either return an object from the pool or a new object where required. As you can see, the object I get back out is still *the same object* according to the browser, it just happens to be empty now.
+The pool namespace allows you to create a pool object. When you add to this pool the object is emptied to prevent memory leaks. When you fetch from it, it will either return an object from the pool or a new object when required. As you can see, the object I get back out is still *the same object* according to the browser, it just happens to be empty now.
 
 ## When to use this
 
