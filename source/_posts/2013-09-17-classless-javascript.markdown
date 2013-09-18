@@ -153,4 +153,100 @@ I created a test on [jsPerf][] to highlight the difference pooling makes here. U
 
 So you can use it wherever you want if you like the style, but it's definitely a good idea to consider something like this in object heavy and performance critical code such as game engines. It may even yield a visible difference on much more limited platforms such as mobile devices, TVs and consoles.
 
+## Update: Inheritance
+
+I was giving this technique some more thought today and I realised that having some form of inheritance would make it even more flexible. It turns out that it's incredibly easy to achieve. Personally, I'd say it's easier than other prototypical inheritance techniques used on constructor based classes.
+
+```javascript
+var shouter = {
+	create: function (self, message) {
+		self.message = message;
+		return self;
+	},
+	shout: function (self) {
+		console.log(self.message);
+	}
+};
+
+var loudShouter = Object.create(shouter);
+loudShouter.shout = function (self) {
+	shouter.shout(self);
+	console.log('(It was pretty damn loud)');
+};
+
+var s = loudShouter.create({}, "Hello, World!");
+loudShouter.shout(s);
+```
+
+So here I am creating a base object in the same style as my previous examples, then I am creating a new object that uses the first as its prototype. I can then override methods as I see fit within the second object. You can also make use of underscore/lodash (or any other code that provides a function to mix objects into each other) to have elegant mixin functionality.
+
+```javascript
+var shouter = {
+	create: function (self, message) {
+		self.message = message;
+		return self;
+	},
+	shout: function (self) {
+		console.log(self.message);
+	}
+};
+
+var someMixin = {
+	countCharacters: function (self) {
+		console.log('Characters in message: ' + self.message.length);
+	}
+};
+
+var loudShouter = Object.create(shouter);
+_.extend(loudShouter, someMixin);
+_.extend(loudShouter, {
+	shout: function (self) {
+		shouter.shout(self);
+		console.log('(It was pretty damn loud)');
+	}
+});
+
+var s = loudShouter.create({}, "Hello, World!");
+loudShouter.shout(s);
+loudShouter.countCharacters(s);
+```
+
+And if you don't want to create, potentially complex, trees of inheritance, why not use composition instead. This technique lends its self to it rather well.
+
+```javascript
+var view = {
+	create: function (self, template) {
+		self.template = _.template(template);
+		return self;
+	},
+	render: function (self, values) {
+		return self.template(values);
+	}
+};
+
+var button = {
+	create: function (self, action) {
+		self.action = action;
+		self.clicked = false;
+		self.view = view.create({}, 'Button clicked? <%- clicked %>');
+		return self;
+	},
+	click: function (self) {
+		self.clicked = true;
+	},
+	render: function (self) {
+		return view.render(self.view, {
+			clicked: self.clicked
+		});
+	}
+};
+
+var myButton = button.create({});
+console.log(button.render(myButton)); // "Button clicked? false"
+button.click(myButton);
+console.log(button.render(myButton)); // "Button clicked? true"
+```
+
+I've created a button that delegates it's rendering to a view stored within the object. To me, that looks pretty damn nice.
+
 [jsPerf]: http://jsperf.com/classes-vs-simple-objects
