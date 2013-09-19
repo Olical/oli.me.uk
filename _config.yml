@@ -72,6 +72,9 @@ github_skip_forks: true
 twitter_user: OliverCaldwell
 twitter_tweet_button: true
 
+# Bitcoin
+bitcoin_wallet_address: 1BE2s3dsELzBHGk3su2U6GfAqSXcA65P34
+
 # Google +1
 google_plus_one: false
 google_plus_one_size: medium
