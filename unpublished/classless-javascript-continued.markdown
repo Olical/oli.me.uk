@@ -81,4 +81,10 @@ model.save = function (self) {
 
 I found that quite surprising in my experimentation, but it's pretty cool all the same.
 
+## A full example
+
+I also thought it would be worth putting together a full example of this technique. I've built an, albeit minimalistic, MVC system with this and it works excellently. It feels like it was easier to write too, but that might just be a placebo. Everything just kind of slotted together really nicely, I didn't have to worry about inheritance or prototypes, it just worked.
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/Wolfy87/Q4yFf/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 [Classless JavaScript]: /2013/09/17/classless-javascript/
