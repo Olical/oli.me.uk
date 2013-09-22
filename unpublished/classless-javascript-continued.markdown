@@ -35,4 +35,50 @@ var model = Object.create(base);
 
 That's it. The model object is still empty but it now holds the base object within it's prototype chain, ready for you to override or add to.
 
+## Inheritance
+
+There isn't any, well, in a way. All objects can be used in any function you want, you just have to make sure they have the right values pre-defined, so you just have to make sure you call the correct create methods.
+
+For instance, say we wanted to add `events` support to our `model` code, you'd just need something like this.
+
+```javascript
+var model = Object.create(base);
+
+model.create = function (self) {
+	self = events.create(self);
+	self.modelData = {};
+	return self;
+};
+
+model.set = function (self, key, value) {
+	// ...
+};
+
+var user = model.create();
+events.addListener(user, 'change', function () {
+	console.log('There was a change!');
+});
+model.set(user, 'name', 'Oliver');
+```
+
+Now our model can have `model` methods or `events` methods such as `events.addListener` called on it interchangeably. This can be used with as many other types as you like!
+
+## Calling methods internally
+
+Amazingly, the `this` object still works, so feel free to use that to reference internal methods.
+
+```javascript
+model.set = function (self, key, value) {
+	this.modelData[key] = value;
+	events.emitEvent(self, 'change');
+	this.save(self);
+};
+
+model.save = function (self) {
+	// Maybe write to a server here.
+};
+```
+
+I found that quite surprising in my experimentation, but it's pretty cool all the same.
+
 [Classless JavaScript]: /2013/09/17/classless-javascript/
