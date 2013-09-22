@@ -1,6 +1,17 @@
+---
+layout: post
+title: "Classless JavaScript - Continued"
+date: 2013-09-22 19:57
+comments: true
+categories:
+ - javascript
+ - oop
+ - classes
+---
+
 *This is a follow on from my previous post, [Classless JavaScript][]. You might want to read, or at least skim, that first.*
 
-I've been having a think about all this classless JavaScript stuff, which is basically normal JavaScript without traditional constructors, and I've come up with a few ideas to refine it. The first of which being **DRY** (Don't Repeat Yourself). I'm going to show you the things I thought of and a few working examples of object loving format.
+I've been having a think about all this classless JavaScript stuff, which is basically normal JavaScript without traditional constructors, and I've come up with a few ideas to refine it. The first of which being **DRY** (Don't Repeat Yourself). I'm going to show you the things I thought of and a few working examples of this strange technique.
 
 <!-- more -->
 
@@ -83,7 +94,7 @@ I found that quite surprising in my experimentation, but it's pretty cool all th
 
 ## A full example
 
-I also thought it would be worth putting together a full example of this technique. I've built an, albeit minimalistic, MVC system with this and it works excellently. It feels like it was easier to write too, but that might just be a placebo. Everything just kind of slotted together really nicely, I didn't have to worry about inheritance or prototypes, it just worked.
+I also thought it would be worth putting together a full example of this technique. I've built an, albeit minimalistic, MVC system with this and it works excellently. It feels like it was easier to write too, but that might just be a placebo. Everything slotted together perfectly, I didn't have to worry about inheritance or prototypes, it just worked.
 
 <iframe width="100%" height="300" src="http://jsfiddle.net/Wolfy87/Q4yFf/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
