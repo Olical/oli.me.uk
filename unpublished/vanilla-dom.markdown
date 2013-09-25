@@ -45,3 +45,27 @@ All this will do is convert our names.
  * `but-i-am-le-tired` becomes `butIAmLeTired`
 
 Pretty slick, right?
+
+## Fetching the elements
+
+And now for the actual function. It will simply iterate over an array of IDs and insert them into an object with camel case names instead of hyphenated.
+
+```javascript
+function getElements(ids) {
+	var i;
+	var length = ids.length;
+	var elements = {};
+
+	for (i = 0; i < length; i++) {
+		elements[hyphensToCamelCase(ids[i])] = document.getElementById(ids[i]);
+	}
+
+	return elements;
+}
+```
+
+That's all there is to it. You can now fetch your elements easily using nice HTML naming conventions, then access them from within your JavaScript under a namespace with camel case names. **Bonus:** Here's [a live copy on JSFiddle][fiddle] for you to play around with.
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/Wolfy87/JFZQZ/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+[fiddle]: http://jsfiddle.net/Wolfy87/JFZQZ/
