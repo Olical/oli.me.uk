@@ -1,3 +1,13 @@
+---
+layout: post
+title: "Grabbing elements from the DOM"
+date: 2013-09-25 21:31
+comments: true
+categories:
+ - dom
+ - javascript
+---
+
 If, like me, you actually quite enjoy working with the vanilla DOM implementations, you may wonder how you're actually supposed to find the elements in the first place. I've been using quite a nice technique for a while now that allows you to have hyphenated names in your HTML, but keep camel case in your JavaScript even though you're searching for the elements en masse.
 
 <!-- more -->
@@ -12,8 +22,8 @@ var elements = getElements([
 	'signup-form',
 	'search-form',
 	'unleash-hell',
-	'well-have-a-nap-then-fire-the-missiles',
-	'but-i-am-le-tired'
+	'but-i-am-le-tired',
+	'well-have-a-nap-then-fire-the-missiles'
 ]);
 ```
 
