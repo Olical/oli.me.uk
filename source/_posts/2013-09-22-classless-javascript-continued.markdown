@@ -80,7 +80,7 @@ Amazingly, the `this` object still works, so feel free to use that to reference 
 
 ```javascript
 model.set = function (self, key, value) {
-	this.modelData[key] = value;
+	self.modelData[key] = value;
 	events.emitEvent(self, 'change');
 	this.save(self);
 };
@@ -92,6 +92,8 @@ model.save = function (self) {
 
 I found that quite surprising in my experimentation, but it's pretty cool all the same.
 
+[As Andrew pointed out][andrew-comment], this is not to be confused with `self`. The `this` value simply allows you to call functions stored within the `model` object, not within the data object that gets assigned to `self`. I have since corrected my above example that used `this.modelData`, this is obviously undefined and should be `self.modelData`.
+
 ## A full example
 
 I also thought it would be worth putting together a full example of this technique. I've built an, albeit minimalistic, MVC system with this and it works excellently. It feels like it was easier to write too, but that might just be a placebo. Everything slotted together perfectly, I didn't have to worry about inheritance or prototypes, it just worked.
@@ -99,3 +101,4 @@ I also thought it would be worth putting together a full example of this techniq
 <iframe width="100%" height="300" src="http://jsfiddle.net/Wolfy87/Q4yFf/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 [Classless JavaScript]: /2013/09/17/classless-javascript/
+[andrew-comment]: http://oli.me.uk/2013/09/22/classless-javascript-continued/#comment-1060281114
