@@ -153,13 +153,117 @@ var teaGraph = new LineGraph(300, 200, {
 		values: [
 			80, 80, 80, 80, 80,
 			79, 78, 76, 72, 60,
-			55, 54, 40, 10, 0, -32
+			55, 54, 40, 10, 0, 0
 		]
 	}
 });
 ```
 
-This allows us to name our plotted lines (even if they're not displayed yet, they might be), colour them and specify the actual values they should display. I think the `LineGraph` class should be able to work with that.
+This allows us to name our plotted lines if we ever wanted to, colour them and specify the actual values they should display. I think the `LineGraph` class should be able to work with that.
+
+## Calculating the bounds
+
+When the data source is set we're going to want to pre-calculate the maximum amount of positions across the X and Y axis. We will use this count to divide the graph up into the right amount of columns and rows to represent every data point.
+
+This will involve creating a few new functions and adding a call to one of them within `setDataSource`. But because these bound values are only really relevant to line graphs, we need to do this in the `LineGraph` class, not `Graph`.
+
+```javascript
+/**
+ * Updates the current data source. The values contained within are used to
+ * render the actual graph.
+ *
+ * This will also calculate the bounds for line graph. Overrides the original
+ * Graph#setDataSource method.
+ *
+ * @param {Object} dataSource
+ */
+LineGraph.prototype.setDataSource = function (dataSource) {
+	Graph.prototype.setDataSource.call(this, dataSource);
+	this._values = this.getDataSourceItemValues();
+	this.calculateDataSourceBounds();
+};
+
+/**
+ * Flattens all of the value arrays into one single array. This is much easier
+ * to iterate over.
+ *
+ * @return {Number[][]}
+ */
+LineGraph.prototype.getDataSourceItemValues = function () {
+	var dataSource = this._dataSource;
+	var values = [];
+	var key;
+
+	for (key in dataSource) {
+		if (dataSource.hasOwnProperty(key)) {
+			values.push(dataSource[key].values);
+		}
+	}
+
+	return values;
+};
+
+/**
+ * Calculates the upper X and Y axis bounds for the current data source.
+ */
+LineGraph.prototype.calculateDataSourceBounds = function () {
+	this._bounds = {
+		x: this.getLargestDataSourceItemLength(),
+		y: this.getLargestDataSourceItemValue()
+	};
+};
+
+/**
+ * Fetches the length of the largest (or longest) data source item. This is the
+ * one with the most values within it's values array.
+ *
+ * @return {Number}
+ */
+LineGraph.prototype.getLargestDataSourceItemLength = function () {
+	var values = this._values;
+	var length = values.length;
+	var max = 0;
+	var currentLength;
+	var i;
+
+	for (i = 0; i < length; i++) {
+		currentLength = values[i].length;
+
+		if (currentLength > max) {
+			max = currentLength;
+		}
+	}
+
+	return max;
+};
+
+/**
+ * Fetches the largest value out of all the data source items.
+ *
+ * @return {Number}
+ */
+LineGraph.prototype.getLargestDataSourceItemValue = function () {
+	var values = this._values;
+	var length = values.length;
+	var max = 0;
+	var currentItem;
+	var i;
+
+	for (i = 0; i < length; i++) {
+		currentItem = Math.max.apply(Math, values[i]);
+
+		if (currentItem  > max) {
+			max = currentItem;
+		}
+	}
+
+	return max;
+};
+```
+
+All that block above is doing is calculating the upper bounds for the X and Y axis. It's very easy to understand because everything is split into it's own documented function that really doesn't do that much. I could have probably squashed it down into a quarter of that size, but then you'd never understand it.
+
+Keeping everything in small, well named and focussed functions keeps things testable and above all: clean. Now that our data is prepared, we can move onto rendering our data.
 
 [james]: https://twitter.com/jamesfublo
 [tea-tweets]: http://www.exquisitetweets.com/tweets?eids=EjQYN9DC57.EjRXe1BtqC.ElgZl6JxF6.ElhqBY5I1Q.Elhyot1C20.ElhGxGBZoi
