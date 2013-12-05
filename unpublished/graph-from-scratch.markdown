@@ -297,6 +297,80 @@ Graph.prototype.drawDataSourceOntoCanvasElement = function () {};
 
 Now for the final step(s); drawing the points and lines onto the canvas.
 
+```javascript
+/**
+ * Draws the current data source onto the canvas.
+ */
+LineGraph.prototype.drawDataSourceOntoCanvasElement = function () {
+	var dataSource = this._dataSource;
+	var currentItem;
+	var key;
+
+	for (key in dataSource) {
+		if (dataSource.hasOwnProperty(key)) {
+			currentItem = dataSource[key];
+			this.plotValuesOntoCanvasElement(currentItem);
+		}
+	}
+};
+
+/**
+ * Plots the given data source item onto the canvas.
+ *
+ * @param {Object} item
+ */
+LineGraph.prototype.plotValuesOntoCanvasElement = function (item) {
+	var context = this._context;
+	var points = item.values;
+	var length = points.length;
+	var currentPosition;
+	var previousPosition;
+	var i;
+
+	var radius = 2;
+	var startAngle = 0;
+	var endAngle = Math.PI * 2;
+
+	context.save();
+	context.fillStyle = context.strokeStyle = item.colour;
+	context.lineWidth = 2;
+
+	for (i = 0; i < length; i++) {
+		previousPosition = currentPosition;
+		currentPosition = this.calculatePositionForValue(i, points[i]);
+
+		context.beginPath();
+		context.arc(currentPosition.x, currentPosition.y, radius, startAngle, endAngle, false);
+		context.fill();
+
+		if (previousPosition) {
+			context.moveTo(previousPosition.x, previousPosition.y);
+			context.lineTo(currentPosition.x, currentPosition.y);
+			context.stroke();
+		}
+	}
+
+	context.restore();
+};
+
+/**
+ * Calculates the X and Y position for a given column and value (row). Returns
+ * the result within an object containing an x and y pixel value.
+ *
+ * @param {Number} column
+ * @param {Number} value
+ * @return {Object}
+ */
+LineGraph.prototype.calculatePositionForValue = function (column, value) {
+	return {
+		x: this._width / this._bounds.x * column,
+		y: this._height - (this._height / this._bounds.y * value)
+	};
+};
+```
+
+That's it. That last block renders each line onto the canvas taking up all available space using it's selected colour. Each line is marked with dots along it's path with a line joining each point.
+
 [james]: https://twitter.com/jamesfublo
 [tea-tweets]: http://www.exquisitetweets.com/tweets?eids=EjQYN9DC57.EjRXe1BtqC.ElgZl6JxF6.ElhqBY5I1Q.Elhyot1C20.ElhGxGBZoi
 [proto]: http://oli.me.uk/2013/06/01/prototypical-inheritance-done-right/
