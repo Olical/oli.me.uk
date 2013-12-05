@@ -126,6 +126,41 @@ Graph.prototype.getCanvasElement = function () {
 };
 ```
 
+You'll now be able to create the canvas and inject it into your page with something like this.
+
+```javascript
+var g = new Graph(300, 200);
+var canvas = g.getCanvasElement();
+document.body.appendChild(canvas);
+```
+
+## Setting up the data
+
+This isn't very well defined, it's kind of up to how the specific graph child class wishes to implement it. Here's how I'm going to implement the data structure for the `LineGraph` class.
+
+```javascript
+var teaGraph = new LineGraph(300, 200, {
+	consumptionSpeed: {
+		colour: '#FF0000',
+		values: [
+			0, 0, 0, 0, 0,
+			0, 0, 0, 0.1, 0.3,
+			0.8, 1, 3, 8, 16, 32
+		]
+	},
+	temperature: {
+		color: '#0000FF',
+		values: [
+			80, 80, 80, 80, 80,
+			79, 78, 76, 72, 60,
+			55, 54, 40, 10, 0, -32
+		]
+	}
+});
+```
+
+This allows us to name our plotted lines (even if they're not displayed yet, they might be), colour them and specify the actual values they should display. I think the `LineGraph` class should be able to work with that.
+
 [james]: https://twitter.com/jamesfublo
 [tea-tweets]: http://www.exquisitetweets.com/tweets?eids=EjQYN9DC57.EjRXe1BtqC.ElgZl6JxF6.ElhqBY5I1Q.Elhyot1C20.ElhGxGBZoi
 [proto]: http://oli.me.uk/2013/06/01/prototypical-inheritance-done-right/
