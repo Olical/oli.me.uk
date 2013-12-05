@@ -265,6 +265,38 @@ All that block above is doing is calculating the upper bounds for the X and Y ax
 
 Keeping everything in small, well named and focussed functions keeps things testable and above all: clean. Now that our data is prepared, we can move onto rendering our data.
 
+## Rendering the graph
+
+The first step is to add an initial render method to the base `Graph` class. This will call all of the appropriate methods to clean and then render the canvas.
+
+```javascript
+/**
+ * Renders the current data source onto the canvas.
+ */
+Graph.prototype.renderGraph = function () {
+	this.clearCanvasElement();
+	this.drawDataSourceOntoCanvasElement();
+};
+
+/**
+ * Clears the current canvas state.
+ */
+Graph.prototype.clearCanvasElement = function () {
+	this._context.clearRect(0, 0, this._width, this._height);
+};
+
+/**
+ * Draws the current data source onto the canvas.
+ *
+ * @abstract
+ */
+Graph.prototype.drawDataSourceOntoCanvasElement = function () {};
+```
+
+`drawDataSourceOntoCanvasElement` is a noop method that `LineGraph` will override to plot it's points and lines onto the canvas. By the time it's called the canvas will be completely clean and ready for drawing.
+
+Now for the final step(s); drawing the points and lines onto the canvas.
+
 [james]: https://twitter.com/jamesfublo
 [tea-tweets]: http://www.exquisitetweets.com/tweets?eids=EjQYN9DC57.EjRXe1BtqC.ElgZl6JxF6.ElhqBY5I1Q.Elhyot1C20.ElhGxGBZoi
 [proto]: http://oli.me.uk/2013/06/01/prototypical-inheritance-done-right/
