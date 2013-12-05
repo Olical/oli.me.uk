@@ -1,12 +1,12 @@
 [James][] mentioned the other day that he was drinking tea "at a rate of 0.75 OC", OC being the base speed at which I myself consume a mug of that wonderful <span style='color:#FFEBCD'>#FFEBCD</span> liquid. A little [flurry of tweets][tea-tweets] ensued which resulted in me kind of accepting a joke/challenge using a meme.
 
-This post is mainly about plotting a graph with nothing but JavaScript and a `&lt;canvas&gt;` element, but it also gives me a chance to finally document my tea drinking habits for the world to gaze upon in wonder.
+This post is mainly about plotting a graph with nothing but JavaScript and a canvas element, but it also gives me a chance to finally document my tea drinking habits for the world to gaze upon in wonder.
 
 <!-- more -->
 
 ## Aim
 
-I'm going to build a simple plotted graph using JavaScript and a `&lt;canvas&gt;` element but without any external dependencies. I'll try to walk you through each step of the way too, so you can pick and choose which parts of this code you'd like to use in your possibly unrelated canvas project.
+I'm going to build a simple plotted graph using JavaScript and a canvas element but without any external dependencies. I'll try to walk you through each step of the way too, so you can pick and choose which parts of this code you'd like to use in your possibly unrelated canvas project.
 
 This will be self contained within a neat little class, so you'll easily be able to pull it out and modify it to your hearts content.
 
@@ -51,7 +51,7 @@ We'll do this by adding a `setDataSource` method which is called from the constr
  * interface of all graph classes.
  *
  * @class
- * @param {*} initialDataSource
+ * @param {*} [initialDataSource]
  */
 function Graph(initialDataSource) {
 	this.setDataSource(initialDataSource);
@@ -68,16 +68,61 @@ Graph.prototype.setDataSource = function (dataSource) {
 };
 ```
 
-We may as well add a public `getDataSource` while we're at it too. If our descendant `LineGraph` class accessed `_dataSource` directly it would be treating it as protected. As we all know, anything prefixed with an underscore is completely private and nothing can touch it. If you try to, bad things will happen. **Very** bad things.
+## Creating the canvas
+
+We'll leave it to the base class to create and prepare the canvas element. It will create the element at a specified size and then store it's context.
 
 ```javascript
 /**
- * Fetches the current data source. Obviously.
+ * Base graph class, handles containment of data points and the overarching
+ * interface of all graph classes.
  *
- * @return {*}
+ * @class
+ * @param {Number} width
+ * @param {Number} height
+ * @param {*} [initialDataSource]
  */
-Graph.prototype.getDataSource = function () {
-	return this._dataSource;
+function Graph(width, height, initialDataSource) {
+	this.setDataSource(initialDataSource);
+	this.initialiseCanvas(width, height);
+}
+
+/**
+ * Initialises the canvas element and stores it's context object. It will also
+ * set the initial width and height.
+ *
+ * @param {Number} width
+ * @param {Number} height
+ */
+Graph.prototype.initialiseCanvas = function (width, height) {
+	this._canvas = document.createElement('canvas');
+	this._context = this._canvas.getContext('2d');
+	this.setSize(width, height);
+};
+
+/**
+ * Updates the current size of the graph.
+ *
+ * @param {Number} width
+ * @param {Number} height
+ */
+Graph.prototype.setSize = function (width, height) {
+	this._canvas.width = this._width = width;
+	this._canvas.height = this._height = height;
+};
+```
+
+We'll also add a way to fetch the canvas element for later. This will be used to inject the element into the DOM where you see fit.
+
+```javascript
+/**
+ * Fetches the actual canvas DOM node. This can be used to place the canvas
+ * within your page.
+ *
+ * @return {HTMLElement}
+ */
+Graph.prototype.getCanvasElement = function () {
+	return this._canvas;
 };
 ```
 
