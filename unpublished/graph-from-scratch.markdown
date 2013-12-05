@@ -371,6 +371,18 @@ LineGraph.prototype.calculatePositionForValue = function (column, value) {
 
 That's it. That last block renders each line onto the canvas taking up all available space using it's selected colour. Each line is marked with dots along it's path with a line joining each point.
 
+## Wrapping it all up (*FINALLY!*)
+
+The code above will leave you with two classes that can be used to set up and plot a graph onto a canvas. It is built in such a way that other graph types could descend from the base class to inherit some default functionality (a pie or bar chart for example).
+
+You can pick up the full source and a small example usage in [this gist][gist]. You can also play with [an interactive version on jsFiddle][fiddle], which I've also embedded below.
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/Wolfy87/yTg9t/2/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+Feel free to leave your thoughts and opinions below, they're appreciated. I hope you've found this useful!
+
 [james]: https://twitter.com/jamesfublo
 [tea-tweets]: http://www.exquisitetweets.com/tweets?eids=EjQYN9DC57.EjRXe1BtqC.ElgZl6JxF6.ElhqBY5I1Q.Elhyot1C20.ElhGxGBZoi
 [proto]: http://oli.me.uk/2013/06/01/prototypical-inheritance-done-right/
+[gist]: https://gist.github.com/Wolfy87/7816213
+[fiddle]: http://jsfiddle.net/Wolfy87/yTg9t/2/
