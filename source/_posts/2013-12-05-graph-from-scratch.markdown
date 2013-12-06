@@ -1,4 +1,15 @@
-[James][] mentioned the other day that he was drinking tea "at a rate of 0.75 OC", OC being the base speed at which I myself consume a mug of that wonderful <span style='color:#FFEBCD'>#FFEBCD</span> liquid. A little [flurry of tweets][tea-tweets] ensued which resulted in me kind of accepting a joke/challenge using a meme.
+---
+layout: post
+title: "Graph from scratch"
+date: 2013-12-05 23:55
+comments: true
+categories:
+ - javascript
+ - graph
+ - tea
+---
+
+[James][] mentioned the other day that he was drinking tea "at a rate of 0.75 OC", OC being the base speed at which I myself consume a mug of that wonderful brown liquid. A little [flurry of tweets][tea-tweets] ensued which resulted in me kind of accepting a joke/challenge using a meme.
 
 This post is mainly about plotting a graph with nothing but JavaScript and a canvas element, but it also gives me a chance to finally document my tea drinking habits for the world to gaze upon in wonder.
 
